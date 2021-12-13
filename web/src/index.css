@@ -1,0 +1,33 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#redwood-app {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'GFS Didot', serif;
+}
+
+p,
+li,
+div,
+span,
+button,
+a {
+  font-family: 'GFS Neohellenic', sans-serif;
+}
