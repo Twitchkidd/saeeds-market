@@ -4,6 +4,7 @@
 
 Todo: difference between njjkgeerts self-hosting and the official docs, `yarn add workspace api @redwoodjs/api-server`
 Todo: do I need to `sudo -u postgres psql` and create the db 'saeeds'?
+Todo: https://github.com/prisma/prisma/issues/4711
 
 ### Setup
 

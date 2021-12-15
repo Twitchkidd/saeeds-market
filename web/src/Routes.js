@@ -8,6 +8,7 @@
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 
 import { Router, Route, Set } from '@redwoodjs/router'
+import InternationalSectionHeadingsLayout from 'src/layouts/InternationalSectionHeadingsLayout'
 import NewItemsLayout from 'src/layouts/NewItemsLayout'
 import WhatsNewHeadersLayout from 'src/layouts/WhatsNewHeadersLayout'
 import DeliveryLinksLayout from 'src/layouts/DeliveryLinksLayout'
@@ -19,6 +20,12 @@ import MainLayout from 'src/layouts/MainLayout/MainLayout';
 const Routes = () => {
   return (
     <Router>
+      <Set wrap={InternationalSectionHeadingsLayout}>
+        <Route path="/international-section-headings/new" page={InternationalSectionHeadingNewInternationalSectionHeadingPage} name="newInternationalSectionHeading" />
+        <Route path="/international-section-headings/{id:Int}/edit" page={InternationalSectionHeadingEditInternationalSectionHeadingPage} name="editInternationalSectionHeading" />
+        <Route path="/international-section-headings/{id:Int}" page={InternationalSectionHeadingInternationalSectionHeadingPage} name="internationalSectionHeading" />
+        <Route path="/international-section-headings" page={InternationalSectionHeadingInternationalSectionHeadingsPage} name="internationalSectionHeadings" />
+      </Set>
       <Set wrap={NewItemsLayout}>
         <Route path="/new-items/new" page={NewItemNewNewItemPage} name="newNewItem" />
         <Route path="/new-items/{id:Int}/edit" page={NewItemEditNewItemPage} name="editNewItem" />

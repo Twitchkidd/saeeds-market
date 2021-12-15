@@ -2,9 +2,9 @@ import { useMutation } from '@redwoodjs/web';
 import { toast } from '@redwoodjs/web/toast';
 import { Link, routes, navigate } from '@redwoodjs/router';
 
-const DELETE_PRODUCT_MUTATION = gql`
-  mutation DeleteProductMutation($id: Int!) {
-    deleteProduct(id: $id) {
+const DELETE_INTERNATIONAL_SECTION_HEADING_MUTATION = gql`
+  mutation DeleteInternationalSectionHeadingMutation($id: Int!) {
+    deleteInternationalSectionHeading(id: $id) {
       id
     }
   }
@@ -30,20 +30,29 @@ const checkboxInputTag = (checked) => {
   return <input type="checkbox" checked={checked} disabled />;
 };
 
-const Product = ({ product }) => {
-  const [deleteProduct] = useMutation(DELETE_PRODUCT_MUTATION, {
-    onCompleted: () => {
-      toast.success('Product deleted');
-      navigate(routes.products());
-    },
-    onError: (error) => {
-      toast.error(error.message);
-    },
-  });
+const InternationalSectionHeading = ({ internationalSectionHeading }) => {
+  const [deleteInternationalSectionHeading] = useMutation(
+    DELETE_INTERNATIONAL_SECTION_HEADING_MUTATION,
+    {
+      onCompleted: () => {
+        toast.success('InternationalSectionHeading deleted');
+        navigate(routes.internationalSectionHeadings());
+      },
+      onError: (error) => {
+        toast.error(error.message);
+      },
+    }
+  );
 
   const onDeleteClick = (id) => {
-    if (confirm('Are you sure you want to delete product ' + id + '?')) {
-      deleteProduct({ variables: { id } });
+    if (
+      confirm(
+        'Are you sure you want to delete internationalSectionHeading ' +
+          id +
+          '?'
+      )
+    ) {
+      deleteInternationalSectionHeading({ variables: { id } });
     }
   };
 
@@ -52,29 +61,31 @@ const Product = ({ product }) => {
       <div className="rw-segment">
         <header className="rw-segment-header">
           <h2 className="rw-heading rw-heading-secondary">
-            Product {product.id} Detail
+            InternationalSectionHeading {internationalSectionHeading.id} Detail
           </h2>
         </header>
         <table className="rw-table">
           <tbody>
             <tr>
               <th>Id</th>
-              <td>{product.id}</td>
+              <td>{internationalSectionHeading.id}</td>
             </tr>
             <tr>
-              <th>Name</th>
-              <td>{product.name}</td>
+              <th>Text</th>
+              <td>{internationalSectionHeading.text}</td>
             </tr>
             <tr>
               <th>Created at</th>
-              <td>{timeTag(product.createdAt)}</td>
+              <td>{timeTag(internationalSectionHeading.createdAt)}</td>
             </tr>
           </tbody>
         </table>
       </div>
       <nav className="rw-button-group">
         <Link
-          to={routes.editProduct({ id: product.id })}
+          to={routes.editInternationalSectionHeading({
+            id: internationalSectionHeading.id,
+          })}
           className="rw-button rw-button-blue"
         >
           Edit
@@ -82,7 +93,7 @@ const Product = ({ product }) => {
         <button
           type="button"
           className="rw-button rw-button-red"
-          onClick={() => onDeleteClick(product.id)}
+          onClick={() => onDeleteClick(internationalSectionHeading.id)}
         >
           Delete
         </button>
@@ -91,4 +102,4 @@ const Product = ({ product }) => {
   );
 };
 
-export default Product;
+export default InternationalSectionHeading;

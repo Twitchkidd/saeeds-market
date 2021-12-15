@@ -13,9 +13,9 @@ const formatDatetime = (value) => {
   }
 };
 
-const ProductForm = (props) => {
+const InternationalSectionHeadingForm = (props) => {
   const onSubmit = (data) => {
-    props.onSave(data, props?.product?.id);
+    props.onSave(data, props?.internationalSectionHeading?.id);
   };
 
   return (
@@ -29,21 +29,21 @@ const ProductForm = (props) => {
         />
 
         <Label
-          name="name"
+          name="text"
           className="rw-label"
           errorClassName="rw-label rw-label-error"
         >
-          Name
+          Text
         </Label>
         <TextField
-          name="name"
-          defaultValue={props.product?.name}
+          name="text"
+          defaultValue={props.internationalSectionHeading?.text}
           className="rw-input"
           errorClassName="rw-input rw-input-error"
           validation={{ required: true }}
         />
 
-        <FieldError name="name" className="rw-field-error" />
+        <FieldError name="text" className="rw-field-error" />
 
         <div className="rw-button-group">
           <Submit disabled={props.loading} className="rw-button rw-button-blue">
@@ -55,4 +55,4 @@ const ProductForm = (props) => {
   );
 };
 
-export default ProductForm;
+export default InternationalSectionHeadingForm;

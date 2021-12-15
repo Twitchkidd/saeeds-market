@@ -17,12 +17,6 @@ model UserExample {
   name  String?
 }
 
-model Product {
-  id        Int      @id @default(autoincrement())
-  name      String
-  createdAt DateTime @default(now())
-}
-
 model Title {
   id        Int      @id @default(autoincrement())
   text      String
@@ -54,3 +48,24 @@ model NewItem {
   description String
   createdAt   DateTime @default(now())
 }
+
+model InternationalSectionHeading {
+  id        Int      @id @default(autoincrement())
+  text      String
+  createdAt DateTime @default(now())
+}
+
+// model Product {
+//   id        Int      @id @default(autoincrement())
+//   name      String
+//   origin    Country? @relation(name: "ProductCountryOfOrigin")
+//   createdAt DateTime @default(now())
+// }
+
+// model Country {
+//   id        Int      @id @default(autoincrement())
+//   name      String
+//   flagSrc   String
+//   products  Product[] @relation(name: "ProductCountryOfOrigin")
+//   createdAt DateTime @default(now())
+// }
