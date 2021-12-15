@@ -8,6 +8,7 @@
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 
 import { Router, Route, Set } from '@redwoodjs/router'
+import TagLinesLayout from 'src/layouts/TagLinesLayout'
 import TitlesLayout from 'src/layouts/TitlesLayout'
 import ProductsLayout from 'src/layouts/ProductsLayout';
 import MainLayout from 'src/layouts/MainLayout/MainLayout';
@@ -15,6 +16,12 @@ import MainLayout from 'src/layouts/MainLayout/MainLayout';
 const Routes = () => {
   return (
     <Router>
+      <Set wrap={TagLinesLayout}>
+        <Route path="/tag-lines/new" page={TagLineNewTagLinePage} name="newTagLine" />
+        <Route path="/tag-lines/{id:Int}/edit" page={TagLineEditTagLinePage} name="editTagLine" />
+        <Route path="/tag-lines/{id:Int}" page={TagLineTagLinePage} name="tagLine" />
+        <Route path="/tag-lines" page={TagLineTagLinesPage} name="tagLines" />
+      </Set>
       <Set wrap={TitlesLayout}>
         <Route path="/titles/new" page={TitleNewTitlePage} name="newTitle" />
         <Route path="/titles/{id:Int}/edit" page={TitleEditTitlePage} name="editTitle" />
