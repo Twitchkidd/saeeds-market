@@ -1,8 +1,7 @@
 import { Link, routes } from '@redwoodjs/router';
 import { MetaTags } from '@redwoodjs/web';
 import Logo from 'src/components/Logo/Logo';
-import Title from 'src/components/Title/Title';
-import ProductsCell from 'src/components/ProductsCell';
+import TitleCell from 'src/components/TitleCell/TitleCell';
 
 const LandingPage = () => {
   return (
@@ -14,14 +13,15 @@ const LandingPage = () => {
       You can look at this documentation for best practices : https://developers.google.com/search/docs/advanced/appearance/good-titles-snippets */
       />
       <Logo />
-      <Title>Saeed's International Market</Title>
+      {/* <Title>Saeed's International Market</Title> */}
+      <TitleCell />
       <h3>
         <em>
           Fine foods, gifts, lunch, and catering ... serving beautiful New
           London since 1903!
         </em>
       </h3>
-      <ProductsCell />
+      {/* <ProductsCell /> */}
       {/* <h1>LandingPage</h1>
       <p>
         Find me in <code>./web/src/pages/LandingPage/LandingPage.js</code>

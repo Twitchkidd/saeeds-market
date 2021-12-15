@@ -7,14 +7,13 @@
 // 'src/pages/HomePage/HomePage.js'         -> HomePage
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 
-import { Router, Route, Set } from '@redwoodjs/router'
-import InternationalSectionHeadingsLayout from 'src/layouts/InternationalSectionHeadingsLayout'
-import NewItemsLayout from 'src/layouts/NewItemsLayout'
-import WhatsNewHeadersLayout from 'src/layouts/WhatsNewHeadersLayout'
-import DeliveryLinksLayout from 'src/layouts/DeliveryLinksLayout'
-import TagLinesLayout from 'src/layouts/TagLinesLayout'
-import TitlesLayout from 'src/layouts/TitlesLayout'
-import ProductsLayout from 'src/layouts/ProductsLayout';
+import { Router, Route, Set } from '@redwoodjs/router';
+import InternationalSectionHeadingsLayout from 'src/layouts/InternationalSectionHeadingsLayout';
+import NewItemsLayout from 'src/layouts/NewItemsLayout';
+import WhatsNewHeadersLayout from 'src/layouts/WhatsNewHeadersLayout';
+import DeliveryLinksLayout from 'src/layouts/DeliveryLinksLayout';
+import TagLinesLayout from 'src/layouts/TagLinesLayout';
+import TitlesLayout from 'src/layouts/TitlesLayout';
 import MainLayout from 'src/layouts/MainLayout/MainLayout';
 
 const Routes = () => {
@@ -55,12 +54,6 @@ const Routes = () => {
         <Route path="/titles/{id:Int}/edit" page={TitleEditTitlePage} name="editTitle" />
         <Route path="/titles/{id:Int}" page={TitleTitlePage} name="title" />
         <Route path="/titles" page={TitleTitlesPage} name="titles" />
-      </Set>
-      <Set wrap={ProductsLayout}>
-        <Route path="/products/new" page={ProductNewProductPage} name="newProduct" />
-        <Route path="/products/{id:Int}/edit" page={ProductEditProductPage} name="editProduct" />
-        <Route path="/products/{id:Int}" page={ProductProductPage} name="product" />
-        <Route path="/products" page={ProductProductsPage} name="products" />
       </Set>
       <Set wrap={MainLayout}>
         <Route path="/" page={LandingPage} name="landing" />
