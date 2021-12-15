@@ -8,6 +8,9 @@
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 
 import { Router, Route, Set } from '@redwoodjs/router'
+import NewItemsLayout from 'src/layouts/NewItemsLayout'
+import WhatsNewHeadersLayout from 'src/layouts/WhatsNewHeadersLayout'
+import DeliveryLinksLayout from 'src/layouts/DeliveryLinksLayout'
 import TagLinesLayout from 'src/layouts/TagLinesLayout'
 import TitlesLayout from 'src/layouts/TitlesLayout'
 import ProductsLayout from 'src/layouts/ProductsLayout';
@@ -16,6 +19,24 @@ import MainLayout from 'src/layouts/MainLayout/MainLayout';
 const Routes = () => {
   return (
     <Router>
+      <Set wrap={NewItemsLayout}>
+        <Route path="/new-items/new" page={NewItemNewNewItemPage} name="newNewItem" />
+        <Route path="/new-items/{id:Int}/edit" page={NewItemEditNewItemPage} name="editNewItem" />
+        <Route path="/new-items/{id:Int}" page={NewItemNewItemPage} name="newItem" />
+        <Route path="/new-items" page={NewItemNewItemsPage} name="newItems" />
+      </Set>
+      <Set wrap={WhatsNewHeadersLayout}>
+        <Route path="/whats-new-headers/new" page={WhatsNewHeaderNewWhatsNewHeaderPage} name="newWhatsNewHeader" />
+        <Route path="/whats-new-headers/{id:Int}/edit" page={WhatsNewHeaderEditWhatsNewHeaderPage} name="editWhatsNewHeader" />
+        <Route path="/whats-new-headers/{id:Int}" page={WhatsNewHeaderWhatsNewHeaderPage} name="whatsNewHeader" />
+        <Route path="/whats-new-headers" page={WhatsNewHeaderWhatsNewHeadersPage} name="whatsNewHeaders" />
+      </Set>
+      <Set wrap={DeliveryLinksLayout}>
+        <Route path="/delivery-links/new" page={DeliveryLinkNewDeliveryLinkPage} name="newDeliveryLink" />
+        <Route path="/delivery-links/{id:Int}/edit" page={DeliveryLinkEditDeliveryLinkPage} name="editDeliveryLink" />
+        <Route path="/delivery-links/{id:Int}" page={DeliveryLinkDeliveryLinkPage} name="deliveryLink" />
+        <Route path="/delivery-links" page={DeliveryLinkDeliveryLinksPage} name="deliveryLinks" />
+      </Set>
       <Set wrap={TagLinesLayout}>
         <Route path="/tag-lines/new" page={TagLineNewTagLinePage} name="newTagLine" />
         <Route path="/tag-lines/{id:Int}/edit" page={TagLineEditTagLinePage} name="editTagLine" />

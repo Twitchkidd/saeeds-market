@@ -34,3 +34,23 @@ model TagLine {
   text      String
   createdAt DateTime @default(now())
 }
+
+model DeliveryLink {
+  id        Int      @id @default(autoincrement())
+  name      String
+  url       String
+  createdAt DateTime @default(now())
+}
+
+model WhatsNewHeader {
+  id        Int      @id @default(autoincrement())
+  text      String
+  createdAt DateTime @default(now())
+}
+
+model NewItem {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  createdAt   DateTime @default(now())
+}
