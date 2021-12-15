@@ -5,6 +5,7 @@ const Main = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 42px;
 `;
 
 const MainLayout = ({ children }) => {
