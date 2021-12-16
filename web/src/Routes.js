@@ -7,12 +7,12 @@
 // 'src/pages/HomePage/HomePage.js'         -> HomePage
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 
-import { Router, Route, Set } from '@redwoodjs/router'
+import { Router, Route, Set } from '@redwoodjs/router';
+import MenuLinksLayout from 'src/layouts/MenuLinksLayout';
 import ImagesLayout from 'src/layouts/ImagesLayout';
 import InternationalSectionHeadingsLayout from 'src/layouts/InternationalSectionHeadingsLayout';
 import NewItemsLayout from 'src/layouts/NewItemsLayout';
 import WhatsNewHeadersLayout from 'src/layouts/WhatsNewHeadersLayout';
-import DeliveryLinksLayout from 'src/layouts/DeliveryLinksLayout';
 import TagLinesLayout from 'src/layouts/TagLinesLayout';
 import TitlesLayout from 'src/layouts/TitlesLayout';
 import MainLayout from 'src/layouts/MainLayout/MainLayout';
@@ -20,6 +20,12 @@ import MainLayout from 'src/layouts/MainLayout/MainLayout';
 const Routes = () => {
   return (
     <Router>
+      <Set wrap={MenuLinksLayout}>
+        <Route path="/menu-links/new" page={MenuLinkNewMenuLinkPage} name="newMenuLink" />
+        <Route path="/menu-links/{id:Int}/edit" page={MenuLinkEditMenuLinkPage} name="editMenuLink" />
+        <Route path="/menu-links/{id:Int}" page={MenuLinkMenuLinkPage} name="menuLink" />
+        <Route path="/menu-links" page={MenuLinkMenuLinksPage} name="menuLinks" />
+      </Set>
       <Set wrap={ImagesLayout}>
         <Route path="/images/new" page={ImageNewImagePage} name="newImage" />
         <Route path="/images/{id:Int}/edit" page={ImageEditImagePage} name="editImage" />
@@ -43,12 +49,6 @@ const Routes = () => {
         <Route path="/whats-new-headers/{id:Int}/edit" page={WhatsNewHeaderEditWhatsNewHeaderPage} name="editWhatsNewHeader" />
         <Route path="/whats-new-headers/{id:Int}" page={WhatsNewHeaderWhatsNewHeaderPage} name="whatsNewHeader" />
         <Route path="/whats-new-headers" page={WhatsNewHeaderWhatsNewHeadersPage} name="whatsNewHeaders" />
-      </Set>
-      <Set wrap={DeliveryLinksLayout}>
-        <Route path="/delivery-links/new" page={DeliveryLinkNewDeliveryLinkPage} name="newDeliveryLink" />
-        <Route path="/delivery-links/{id:Int}/edit" page={DeliveryLinkEditDeliveryLinkPage} name="editDeliveryLink" />
-        <Route path="/delivery-links/{id:Int}" page={DeliveryLinkDeliveryLinkPage} name="deliveryLink" />
-        <Route path="/delivery-links" page={DeliveryLinkDeliveryLinksPage} name="deliveryLinks" />
       </Set>
       <Set wrap={TagLinesLayout}>
         <Route path="/tag-lines/new" page={TagLineNewTagLinePage} name="newTagLine" />

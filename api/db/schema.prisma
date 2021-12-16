@@ -29,9 +29,10 @@ model TagLines {
   createdAt DateTime @default(now())
 }
 
-model DeliveryLink {
+model MenuLink {
   id        Int      @id @default(autoincrement())
   name      String
+  text      String
   url       String
   createdAt DateTime @default(now())
 }

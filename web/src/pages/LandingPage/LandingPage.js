@@ -1,6 +1,7 @@
 import { Link, routes } from '@redwoodjs/router';
 import { MetaTags } from '@redwoodjs/web';
 import Header from 'src/components/Header';
+import MenuLinkCell from 'src/components/MenuLinkCell/MenuLinkCell';
 
 const LandingPage = () => {
   return (
@@ -12,6 +13,7 @@ const LandingPage = () => {
       You can look at this documentation for best practices : https://developers.google.com/search/docs/advanced/appearance/good-titles-snippets */
       />
       <Header />
+      <MenuLinkCell />
     </>
   );
 };
