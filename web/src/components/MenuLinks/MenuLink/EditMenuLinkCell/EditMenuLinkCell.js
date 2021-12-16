@@ -2,7 +2,7 @@ import { useMutation } from '@redwoodjs/web';
 import { toast } from '@redwoodjs/web/toast';
 import { navigate, routes } from '@redwoodjs/router';
 
-import MenuLinkForm from 'src/components/MenuLink/MenuLinkForm';
+import MenuLinkForm from 'src/components/MenuLinks/MenuLink/MenuLinkForm';
 
 export const QUERY = gql`
   query EditMenuLinkById($id: Int!) {

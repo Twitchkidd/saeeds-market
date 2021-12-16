@@ -2,7 +2,7 @@ import { useMutation } from '@redwoodjs/web';
 import { toast } from '@redwoodjs/web/toast';
 import { Link, routes } from '@redwoodjs/router';
 
-import { QUERY } from 'src/components/TagLine/TagLinesCell';
+import { QUERY } from 'src/components/Header/TagLine/TagLinesCell';
 
 const DELETE_TAG_LINE_MUTATION = gql`
   mutation DeleteTagLineMutation($id: Int!) {

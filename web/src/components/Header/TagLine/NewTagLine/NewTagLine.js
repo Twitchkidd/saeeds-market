@@ -1,7 +1,7 @@
 import { useMutation } from '@redwoodjs/web';
 import { toast } from '@redwoodjs/web/toast';
 import { navigate, routes } from '@redwoodjs/router';
-import TagLineForm from 'src/components/TagLine/TagLineForm';
+import TagLineForm from 'src/components/Header/TagLine/TagLineForm';
 
 const CREATE_TAG_LINE_MUTATION = gql`
   mutation CreateTagLineMutation($input: CreateTagLineInput!) {

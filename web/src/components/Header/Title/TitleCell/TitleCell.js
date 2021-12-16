@@ -1,4 +1,4 @@
-import Title from 'src/components/Title/Title';
+import Title from 'src/components/Header/Title/Title';
 
 export const QUERY = gql`
   query FindTitleById($id: Int!) {

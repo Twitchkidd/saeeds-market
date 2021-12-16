@@ -1,4 +1,4 @@
-import EditTitleCell from 'src/components/Title/EditTitleCell';
+import EditTitleCell from 'src/components/Header/Title/EditTitleCell';
 
 const EditTitlePage = ({ id }) => {
   return <EditTitleCell id={id} />;

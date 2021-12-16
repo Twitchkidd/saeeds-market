@@ -1,4 +1,4 @@
-import EditMenuLinkCell from 'src/components/MenuLink/EditMenuLinkCell';
+import EditMenuLinkCell from 'src/components/MenuLinks/MenuLink/EditMenuLinkCell';
 
 const EditMenuLinkPage = ({ id }) => {
   return <EditMenuLinkCell id={id} />;

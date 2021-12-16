@@ -1,14 +1,15 @@
 import { Link, routes } from '@redwoodjs/router';
 
-import MenuLinks from 'src/components/MenuLink/MenuLinks';
+import BusinessInfos from 'src/components/Footer/BusinessInfo/BusinessInfos';
 
 export const QUERY = gql`
-  query FindMenuLinks {
-    menuLinks {
+  query FindBusinessInfos {
+    businessInfos {
       id
       name
-      text
-      url
+      address
+      hours
+      phone
       createdAt
     }
   }
@@ -19,8 +20,8 @@ export const Loading = () => <div>Loading...</div>;
 export const Empty = () => {
   return (
     <div className="rw-text-center">
-      {'No menuLinks yet. '}
-      <Link to={routes.newMenuLink()} className="rw-link">
+      {'No businessInfos yet. '}
+      <Link to={routes.newBusinessInfo()} className="rw-link">
         {'Create one?'}
       </Link>
     </div>
@@ -31,6 +32,6 @@ export const Failure = ({ error }) => (
   <div className="rw-cell-error">{error.message}</div>
 );
 
-export const Success = ({ menuLinks }) => {
-  return <MenuLinks menuLinks={menuLinks} />;
+export const Success = ({ businessInfos }) => {
+  return <BusinessInfos businessInfos={businessInfos} />;
 };

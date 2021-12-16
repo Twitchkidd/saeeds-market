@@ -6,6 +6,7 @@ const Main = styled.main`
   flex-direction: column;
   align-items: center;
   padding: 42px;
+  position: relative;
 `;
 
 const MainLayout = ({ children }) => {

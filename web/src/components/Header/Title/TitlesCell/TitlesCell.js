@@ -1,6 +1,6 @@
 import { Link, routes } from '@redwoodjs/router';
 
-import Titles from 'src/components/Title/Titles';
+import Titles from 'src/components/Header/Title/Titles';
 
 export const QUERY = gql`
   query FindTitles {

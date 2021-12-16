@@ -1,7 +1,7 @@
 import { useMutation } from '@redwoodjs/web';
 import { toast } from '@redwoodjs/web/toast';
 import { navigate, routes } from '@redwoodjs/router';
-import MenuLinkForm from 'src/components/MenuLink/MenuLinkForm';
+import MenuLinkForm from 'src/components/MenuLinks/MenuLink/MenuLinkForm';
 
 const CREATE_MENU_LINK_MUTATION = gql`
   mutation CreateMenuLinkMutation($input: CreateMenuLinkInput!) {

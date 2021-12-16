@@ -1,4 +1,4 @@
-import MenuLink from 'src/components/MenuLink/MenuLink';
+import MenuLink from 'src/components/MenuLinks/MenuLink/MenuLink';
 
 export const QUERY = gql`
   query FindMenuLinkById($id: Int!) {

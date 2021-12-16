@@ -2,7 +2,7 @@ import { useMutation } from '@redwoodjs/web';
 import { toast } from '@redwoodjs/web/toast';
 import { navigate, routes } from '@redwoodjs/router';
 
-import TitleForm from 'src/components/Title/TitleForm';
+import TitleForm from 'src/components/Header/Title/TitleForm';
 
 export const QUERY = gql`
   query EditTitleById($id: Int!) {

@@ -1,4 +1,4 @@
-import NewMenuLink from 'src/components/MenuLink/NewMenuLink';
+import NewMenuLink from 'src/components/MenuLinks/MenuLink/NewMenuLink';
 
 const NewMenuLinkPage = () => {
   return <NewMenuLink />;

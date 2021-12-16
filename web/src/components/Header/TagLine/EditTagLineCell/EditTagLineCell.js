@@ -2,7 +2,7 @@ import { useMutation } from '@redwoodjs/web';
 import { toast } from '@redwoodjs/web/toast';
 import { navigate, routes } from '@redwoodjs/router';
 
-import TagLineForm from 'src/components/TagLine/TagLineForm';
+import TagLineForm from 'src/components/Header/TagLine/TagLineForm';
 
 export const QUERY = gql`
   query EditTagLineById($id: Int!) {

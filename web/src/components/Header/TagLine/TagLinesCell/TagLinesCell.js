@@ -1,6 +1,6 @@
 import { Link, routes } from '@redwoodjs/router';
 
-import TagLines from 'src/components/TagLine/TagLines';
+import TagLines from 'src/components/Header/TagLine/TagLines';
 
 export const QUERY = gql`
   query FindTagLines {

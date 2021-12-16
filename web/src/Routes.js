@@ -7,7 +7,8 @@
 // 'src/pages/HomePage/HomePage.js'         -> HomePage
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 
-import { Router, Route, Set } from '@redwoodjs/router';
+import { Router, Route, Set } from '@redwoodjs/router'
+import BusinessInfosLayout from 'src/layouts/BusinessInfosLayout';
 import MenuLinksLayout from 'src/layouts/MenuLinksLayout';
 import ImagesLayout from 'src/layouts/ImagesLayout';
 import InternationalSectionHeadingsLayout from 'src/layouts/InternationalSectionHeadingsLayout';
@@ -20,6 +21,12 @@ import MainLayout from 'src/layouts/MainLayout/MainLayout';
 const Routes = () => {
   return (
     <Router>
+      <Set wrap={BusinessInfosLayout}>
+        <Route path="/business-infos/new" page={BusinessInfoNewBusinessInfoPage} name="newBusinessInfo" />
+        <Route path="/business-infos/{id:Int}/edit" page={BusinessInfoEditBusinessInfoPage} name="editBusinessInfo" />
+        <Route path="/business-infos/{id:Int}" page={BusinessInfoBusinessInfoPage} name="businessInfo" />
+        <Route path="/business-infos" page={BusinessInfoBusinessInfosPage} name="businessInfos" />
+      </Set>
       <Set wrap={MenuLinksLayout}>
         <Route path="/menu-links/new" page={MenuLinkNewMenuLinkPage} name="newMenuLink" />
         <Route path="/menu-links/{id:Int}/edit" page={MenuLinkEditMenuLinkPage} name="editMenuLink" />

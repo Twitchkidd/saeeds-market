@@ -1,4 +1,4 @@
-import NewTitle from 'src/components/Title/NewTitle';
+import NewTitle from 'src/components/Header/Title/NewTitle';
 
 const NewTitlePage = () => {
   return <NewTitle />;

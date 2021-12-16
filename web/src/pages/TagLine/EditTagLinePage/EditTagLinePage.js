@@ -1,4 +1,4 @@
-import EditTagLineCell from 'src/components/TagLine/EditTagLineCell';
+import EditTagLineCell from 'src/components/Header/TagLine/EditTagLineCell';
 
 const EditTagLinePage = ({ id }) => {
   return <EditTagLineCell id={id} />;

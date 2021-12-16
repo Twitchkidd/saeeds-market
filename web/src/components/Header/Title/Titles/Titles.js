@@ -2,7 +2,7 @@ import { useMutation } from '@redwoodjs/web';
 import { toast } from '@redwoodjs/web/toast';
 import { Link, routes } from '@redwoodjs/router';
 
-import { QUERY } from 'src/components/Title/TitlesCell';
+import { QUERY } from 'src/components/Header/Title/TitlesCell';
 
 const DELETE_TITLE_MUTATION = gql`
   mutation DeleteTitleMutation($id: Int!) {

@@ -1,4 +1,4 @@
-import TitlesCell from 'src/components/Title/TitlesCell';
+import TitlesCell from 'src/components/Header/Title/TitlesCell';
 
 const TitlesPage = () => {
   return <TitlesCell />;

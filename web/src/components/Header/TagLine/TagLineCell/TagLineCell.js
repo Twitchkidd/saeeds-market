@@ -1,4 +1,4 @@
-import TagLine from 'src/components/TagLine/TagLine';
+import TagLine from 'src/components/Header/TagLine/TagLine';
 
 export const QUERY = gql`
   query FindTagLineById($id: Int!) {

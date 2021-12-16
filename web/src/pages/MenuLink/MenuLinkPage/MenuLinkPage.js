@@ -1,4 +1,4 @@
-import MenuLinkCell from 'src/components/MenuLink/MenuLinkCell';
+import MenuLinkCell from 'src/components/MenuLinks/MenuLink/MenuLinkCell';
 
 const MenuLinkPage = ({ id }) => {
   return <MenuLinkCell id={id} />;
