@@ -27,6 +27,9 @@ const ButtonsWrapper = styled.div`
     font-size: 24px;
     color: #fefefe;
     padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `;
 
@@ -43,11 +46,11 @@ const LandingPage = () => {
       <MenuLinks />
       <ButtonsWrapper>
         <a href="#" style={{ background: vividMalachine }}>
-          <Phone width={16} height={16} style={{ marginRight: '8px' }} />
+          <Phone style={{ marginRight: '8px' }} />
           Call
         </a>
         <a href="#" style={{ background: mediumBlue }}>
-          <Map width={16} height={16} style={{ marginRight: '8px' }} />
+          <Map style={{ marginRight: '8px' }} />
           Map
         </a>
         <a href="#" style={{ background: alloyOrange }}>

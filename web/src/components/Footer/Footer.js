@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import MadeWithLove from './MadeWithLove/MadeWithLove';
 import BusinessInfoCell from './BusinessInfoCell/BusinessInfoCell';
-import { greekBlue, rainbowPurple } from 'src/utils/colors';
+import { mediumBlue, rainbowPurple } from 'src/utils/colors';
 
 const Wrapper = styled.div`
-  background: ${greekBlue};
+  background: ${mediumBlue};
   text-align: center;
   padding: 18px 42px;
   color: #fefefe;
