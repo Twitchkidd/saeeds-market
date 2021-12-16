@@ -1,9 +1,13 @@
 import styled from 'styled-components';
 
+const Heading = styled.h3`
+  text-align: center;
+`;
+
 const TagLine = ({ text }) => (
-  <h3>
+  <Heading>
     <em>{text}</em>
-  </h3>
+  </Heading>
 );
 
 export const QUERY = gql`
