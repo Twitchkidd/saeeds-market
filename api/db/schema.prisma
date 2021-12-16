@@ -23,7 +23,7 @@ model Titles {
   createdAt DateTime @default(now())
 }
 
-model TagLine {
+model TagLines {
   id        Int      @id @default(autoincrement())
   text      String
   createdAt DateTime @default(now())

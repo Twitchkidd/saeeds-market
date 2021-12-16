@@ -1,30 +1,30 @@
 import { db } from 'src/lib/db';
 
 export const tagLines = () => {
-  return db.tagLine.findMany();
+  return db.tagLines.findMany();
 };
 
 export const tagLine = ({ id }) => {
-  return db.tagLine.findUnique({
+  return db.tagLines.findUnique({
     where: { id },
   });
 };
 
 export const createTagLine = ({ input }) => {
-  return db.tagLine.create({
+  return db.tagLines.create({
     data: input,
   });
 };
 
 export const updateTagLine = ({ id, input }) => {
-  return db.tagLine.update({
+  return db.tagLines.update({
     data: input,
     where: { id },
   });
 };
 
 export const deleteTagLine = ({ id }) => {
-  return db.tagLine.delete({
+  return db.tagLines.delete({
     where: { id },
   });
 };
