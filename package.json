@@ -9,7 +9,8 @@
   },
   "scripts": {
     "deploy:setup": "pm2 deploy pm2.config.js production setup",
-    "deploy": "pm2 deploy pm2.config.js production deploy"
+    "deploy": "pm2 deploy pm2.config.js production deploy",
+    "svgr": "svgr -d web/src/Icons/ web/src/assets/"
   },
   "devDependencies": {
     "@redwoodjs/core": "0.39.4",

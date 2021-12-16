@@ -6,15 +6,13 @@ import { greekBlue, rainbowPurple } from 'src/utils/colors';
 const Wrapper = styled.div`
   background: ${greekBlue};
   text-align: center;
-  padding: 24px;
+  padding: 18px 42px;
   color: #fefefe;
   display: grid;
-  margin-top: 64px;
+  margin-top: 48px;
   place-items: center;
   a {
     text-decoration: none;
-  }
-  a {
     color: #fefefe;
   }
   a:visited {
