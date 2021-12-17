@@ -39,11 +39,11 @@ const AdminPage = () => {
       />
 
       <h1>Admin Page</h1>
-      <UserAuthTools />
       <Link to={routes.titles()}>Title</Link>
       <Link to={routes.tagLines()}>Tag Line</Link>
       <Link to={routes.menuLinks()}>Menu Links</Link>
       <Link to={routes.businessInfos()}>Business Info</Link>
+      <UserAuthTools />
     </>
   );
 };
