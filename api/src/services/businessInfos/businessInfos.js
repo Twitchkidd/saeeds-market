@@ -12,14 +12,14 @@ export const businessInfo = ({ id }) => {
 };
 
 export const createBusinessInfo = ({ input }) => {
-  requireAuth();
+  requireAuth({ role: 'admin' });
   return db.businessInfo.create({
     data: input,
   });
 };
 
 export const updateBusinessInfo = ({ id, input }) => {
-  requireAuth();
+  requireAuth({ role: 'admin' });
   return db.businessInfo.update({
     data: input,
     where: { id },
@@ -27,7 +27,7 @@ export const updateBusinessInfo = ({ id, input }) => {
 };
 
 export const deleteBusinessInfo = ({ id }) => {
-  requireAuth();
+  requireAuth({ role: 'admin' });
   return db.businessInfo.delete({
     where: { id },
   });
