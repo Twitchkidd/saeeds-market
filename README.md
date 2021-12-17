@@ -7,6 +7,7 @@
 
 Todo: https://github.com/prisma/prisma/issues/4711
 Todo: Defensive CSS!
+Todo: .env on the pi
 
 ### Setup
 
