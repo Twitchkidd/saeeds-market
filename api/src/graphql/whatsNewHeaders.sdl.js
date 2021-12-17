@@ -6,7 +6,7 @@ export const schema = gql`
   }
 
   type Query {
-    whatsNewHeaders: [WhatsNewHeader!]! @requireAuth
+    whatsNewHeaders: [WhatsNewHeader!]! @skipAuth
     whatsNewHeader(id: Int!): WhatsNewHeader @requireAuth
   }
 

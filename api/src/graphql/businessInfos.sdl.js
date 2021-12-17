@@ -9,7 +9,7 @@ export const schema = gql`
   }
 
   type Query {
-    businessInfos: [BusinessInfo!]! @requireAuth
+    businessInfos: [BusinessInfo!]! @skipAuth
     businessInfo(id: Int!): BusinessInfo @requireAuth
   }
 

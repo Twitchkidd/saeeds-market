@@ -14,9 +14,9 @@ const Wrapper = styled.div`
     text-decoration: none;
     color: #fefefe;
   }
-  a:visited {
+  /* a:visited {
     color: ${rainbowPurple};
-  }
+  } */
   left: 0;
   margin-left: -50vw;
   margin-right: -50vw;

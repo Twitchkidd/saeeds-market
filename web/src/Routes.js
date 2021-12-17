@@ -22,6 +22,9 @@ const Routes = () => {
   return (
     <Router>
       <Private unauthenticated="landing">
+        <Set wrap={MainLayout}>
+          <Route path="/admin" page={AdminPage} name="admin" />
+        </Set>
         <Set wrap={BusinessInfosLayout}>
           <Route path="/admin/business-infos/new" page={BusinessInfoNewBusinessInfoPage} name="newBusinessInfo" />
           <Route path="/admin/business-infos/{id:Int}/edit" page={BusinessInfoEditBusinessInfoPage} name="editBusinessInfo" />

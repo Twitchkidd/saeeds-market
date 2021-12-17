@@ -12,14 +12,14 @@ export const tagLine = ({ id }) => {
 };
 
 export const createTagLine = ({ input }) => {
-  requireAuth();
+  requireAuth({ role: 'admin' });
   return db.tagLines.create({
     data: input,
   });
 };
 
 export const updateTagLine = ({ id, input }) => {
-  requireAuth();
+  requireAuth({ role: 'admin' });
   return db.tagLines.update({
     data: input,
     where: { id },
@@ -27,7 +27,7 @@ export const updateTagLine = ({ id, input }) => {
 };
 
 export const deleteTagLine = ({ id }) => {
-  requireAuth();
+  requireAuth({ role: 'admin' });
   return db.tagLines.delete({
     where: { id },
   });

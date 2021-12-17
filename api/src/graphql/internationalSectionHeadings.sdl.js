@@ -6,7 +6,7 @@ export const schema = gql`
   }
 
   type Query {
-    internationalSectionHeadings: [InternationalSectionHeading!]! @requireAuth
+    internationalSectionHeadings: [InternationalSectionHeading!]! @skipAuth
     internationalSectionHeading(id: Int!): InternationalSectionHeading
       @requireAuth
   }

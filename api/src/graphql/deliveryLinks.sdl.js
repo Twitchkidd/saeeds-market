@@ -7,7 +7,7 @@ export const schema = gql`
   }
 
   type Query {
-    deliveryLinks: [DeliveryLink!]! @requireAuth
+    deliveryLinks: [DeliveryLink!]! @skipAuth
     deliveryLink(id: Int!): DeliveryLink @requireAuth
   }
 

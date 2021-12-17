@@ -8,7 +8,7 @@ export const schema = gql`
   }
 
   type Query {
-    menuLinks: [MenuLink!]! @requireAuth
+    menuLinks: [MenuLink!]! @skipAuth
     menuLink(id: Int!): MenuLink @requireAuth
   }
 

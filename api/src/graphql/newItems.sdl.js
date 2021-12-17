@@ -7,7 +7,7 @@ export const schema = gql`
   }
 
   type Query {
-    newItems: [NewItem!]! @requireAuth
+    newItems: [NewItem!]! @skipAuth
     newItem(id: Int!): NewItem @requireAuth
   }
 
