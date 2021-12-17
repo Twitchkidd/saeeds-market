@@ -3,12 +3,13 @@ import styled from 'styled-components';
 import { MetaTags } from '@redwoodjs/web';
 import Header from 'src/components/Header';
 import MenuLinks from 'src/components/MenuLinks';
+import HorizontalBreak from 'src/components/HorizontalBreak';
 import Footer from 'src/components/Footer';
 import {
-  alloyOrange,
-  vividMalachine,
+  tigersEye,
+  crayolaGreen,
   internationalOrange,
-  mediumBlue,
+  greekBlue,
 } from 'src/utils/colors';
 import Phone from 'src/Icons/Phone';
 import Map from 'src/Icons/Map';
@@ -45,21 +46,22 @@ const LandingPage = () => {
       <Header />
       <MenuLinks />
       <ButtonsWrapper>
-        <a href="#" style={{ background: vividMalachine }}>
+        <a href="#" style={{ background: crayolaGreen }}>
           <Phone style={{ marginRight: '8px' }} />
           Call
         </a>
-        <a href="#" style={{ background: mediumBlue }}>
+        <a href="#" style={{ background: greekBlue }}>
           <Map style={{ marginRight: '8px' }} />
           Map
         </a>
-        <a href="#" style={{ background: alloyOrange }}>
+        <a href="#" style={{ background: tigersEye }}>
           GrubHub
         </a>
         <a href="#" style={{ background: internationalOrange }}>
           DoorDash
         </a>
       </ButtonsWrapper>
+      <HorizontalBreak />
       <Footer />
     </>
   );

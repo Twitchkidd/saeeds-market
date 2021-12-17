@@ -8,3 +8,6 @@ export const crayolaGreen = '#12C770';
 export const turquoiseSurf = '#12C4C7';
 export const mediumBlue = '#1512C7';
 export const kellyGreen = '#69C712';
+export const tigersEye = '#ED9638';
+export const grayWeightedAverageGammaAdjusted = '#9D9D9D';
+export const grayscaleDesaturated = '#6D6D6D';

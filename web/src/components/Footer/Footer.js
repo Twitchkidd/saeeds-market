@@ -9,7 +9,6 @@ const Wrapper = styled.div`
   padding: 18px 42px;
   color: #fefefe;
   display: grid;
-  margin-top: 48px;
   place-items: center;
   a {
     text-decoration: none;

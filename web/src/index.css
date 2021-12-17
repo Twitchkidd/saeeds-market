@@ -1,17 +1,18 @@
 html,
 body {
-  height: 100%;
-  width: 100%;
   margin: 0;
   padding: 0;
+  overscroll-behavior-y: none;
+  position: fixed;
+  overflow: hidden;
 }
 
 #redwood-app {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
+  height: 100vh;
+  width: 100vw;
   display: flex;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 h1,
