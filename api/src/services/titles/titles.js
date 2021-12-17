@@ -11,12 +11,14 @@ export const title = ({ id }) => {
 };
 
 export const createTitle = ({ input }) => {
+  requireAuth();
   return db.titles.create({
     data: input,
   });
 };
 
 export const updateTitle = ({ id, input }) => {
+  requireAuth();
   return db.titles.update({
     data: input,
     where: { id },
@@ -24,6 +26,7 @@ export const updateTitle = ({ id, input }) => {
 };
 
 export const deleteTitle = ({ id }) => {
+  requireAuth();
   return db.titles.delete({
     where: { id },
   });

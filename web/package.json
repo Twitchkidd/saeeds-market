@@ -13,6 +13,8 @@
     ]
   },
   "dependencies": {
+    "@auth0/auth0-spa-js": "^1.19.3",
+    "@redwoodjs/auth": "0.39.4",
     "@redwoodjs/forms": "0.39.4",
     "@redwoodjs/router": "0.39.4",
     "@redwoodjs/web": "0.39.4",
