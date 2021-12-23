@@ -12,14 +12,14 @@ export const image = ({ id }) => {
 };
 
 export const createImage = ({ input }) => {
-  requireAuth();
+  requireAuth({ roles: ['admin'] });
   return db.image.create({
     data: input,
   });
 };
 
 export const updateImage = ({ id, input }) => {
-  requireAuth();
+  requireAuth({ roles: ['admin'] });
   return db.image.update({
     data: input,
     where: { id },
@@ -27,7 +27,7 @@ export const updateImage = ({ id, input }) => {
 };
 
 export const deleteImage = ({ id }) => {
-  requireAuth();
+  requireAuth({ roles: ['admin'] });
   return db.image.delete({
     where: { id },
   });
