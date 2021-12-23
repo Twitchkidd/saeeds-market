@@ -3,7 +3,7 @@
 import { MetaTags } from '@redwoodjs/web';
 // import Header from 'src/components/Header';
 // import MenuLinks from 'src/components/MenuLinks';
-// import HorizontalBreak from 'src/components/HorizontalBreak';
+import HorizontalBreak from 'src/components/HorizontalBreak';
 // import Footer from 'src/components/Footer';
 // import {
 //   tigersEye,
@@ -14,6 +14,7 @@ import { MetaTags } from '@redwoodjs/web';
 // import Phone from 'src/Icons/Phone';
 // import Map from 'src/Icons/Map';
 import Nav from 'src/components/Nav';
+import Logo from 'src/assets/logo.svg';
 
 // const ButtonsWrapper = styled.div`
 //   display: flex;
@@ -45,6 +46,8 @@ const LandingPage = () => {
       You can look at this documentation for best practices : https://developers.google.com/search/docs/advanced/appearance/good-titles-snippets */
       />
       <Nav />
+      <HorizontalBreak />
+      <Logo style={{ maxWidth: '100%', maxHeight: '100%' }} />
       {/* <Header />
       <MenuLinks />
       <ButtonsWrapper>
