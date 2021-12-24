@@ -7,7 +7,7 @@ export const schema = gql`
 
   type Query {
     tagLines: [TagLine!]! @skipAuth
-    tagLine(id: Int!): TagLine @requireAuth
+    tagLine(id: Int!): TagLine @skipAuth
   }
 
   input CreateTagLineInput {

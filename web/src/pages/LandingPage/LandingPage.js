@@ -1,42 +1,19 @@
 // import { Link, routes } from '@redwoodjs/router';
+import { useState } from 'react';
 // import styled from 'styled-components';
 import { MetaTags } from '@redwoodjs/web';
-// import Header from 'src/components/Header';
-// import MenuLinks from 'src/components/MenuLinks';
 import HorizontalBreak from 'src/components/HorizontalBreak';
-// import Footer from 'src/components/Footer';
-// import {
-//   tigersEye,
-//   crayolaGreen,
-//   internationalOrange,
-//   greekBlue,
-// } from 'src/utils/colors';
-// import Phone from 'src/Icons/Phone';
-// import Map from 'src/Icons/Map';
 import Nav from 'src/components/Nav';
 import Logo from 'src/assets/logo.svg';
-
-// const ButtonsWrapper = styled.div`
-//   display: flex;
-//   flex-wrap: wrap;
-//   gap: 8px;
-//   margin-top: 32px;
-//   a {
-//     display: block;
-//     border-radius: 16px;
-//     width: calc(50vw - 64px);
-//     text-align: center;
-//     text-decoration: none;
-//     font-size: 24px;
-//     color: #fefefe;
-//     padding: 8px;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//   }
-// `;
+import TagLineCell from 'src/components/TagLineCell/TagLineCell';
+import UserAuthTools from 'src/components/UserAuthTools/UserAuthTools';
 
 const LandingPage = () => {
+  const [taps, setTaps] = useState(0);
+  const handleClick = () => {
+    console.log(taps);
+    setTaps((prevTaps) => ++prevTaps);
+  };
   return (
     <>
       <MetaTags
@@ -47,27 +24,15 @@ const LandingPage = () => {
       />
       <Nav />
       <HorizontalBreak />
-      <Logo style={{ maxWidth: '100%', maxHeight: '100%' }} />
-      {/* <Header />
-      <MenuLinks />
-      <ButtonsWrapper>
-        <a href="#" style={{ background: crayolaGreen }}>
-          <Phone style={{ marginRight: '8px' }} />
-          Call
-        </a>
-        <a href="#" style={{ background: greekBlue }}>
-          <Map style={{ marginRight: '8px' }} />
-          Map
-        </a>
-        <a href="#" style={{ background: tigersEye }}>
-          GrubHub
-        </a>
-        <a href="#" style={{ background: internationalOrange }}>
-          DoorDash
-        </a>
-      </ButtonsWrapper>
-      <HorizontalBreak />
-      <Footer /> */}
+      {taps < 8 ? (
+        <Logo
+          onClick={handleClick}
+          style={{ width: '309px', height: '309px', marginBottom: '28px' }}
+        />
+      ) : (
+        <UserAuthTools />
+      )}
+      <TagLineCell />
     </>
   );
 };
