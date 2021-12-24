@@ -47,7 +47,7 @@ const LandingPage = () => {
       />
       <Nav />
       <HorizontalBreak />
-      <Logo style={{ maxWidth: '100%', maxHeight: '100%' }} />
+      <Logo style={{ width: '309px', height: '309px' }} />
       {/* <Header />
       <MenuLinks />
       <ButtonsWrapper>

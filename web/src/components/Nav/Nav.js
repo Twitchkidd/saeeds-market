@@ -25,7 +25,11 @@ const NavText = styled.span`
 
 const Button = ({ which }) => (
   <ButtonWrapper>
-    {which === 'open' ? <NavOpen /> : <NavClose />}
+    {which === 'open' ? (
+      <NavOpen />
+    ) : (
+      <NavClose style={{ marginRight: '3px' }} />
+    )}
     <NavText>MENU</NavText>
   </ButtonWrapper>
 );
