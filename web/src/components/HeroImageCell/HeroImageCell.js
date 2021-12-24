@@ -1,17 +1,13 @@
 import styled from 'styled-components';
 
-const TagLineText = styled.h2`
-  max-width: 309px;
-  margin: 0;
-  margin-bottom: 28px;
-  text-align: center;
-  font-size: 16px;
+const HeroImage = styled.img`
+  width: 100%;
 `;
 
 export const QUERY = gql`
-  query FindTagLinesQuery {
-    tagLines {
-      text
+  query FindHeroImagesQuery {
+    heroImages {
+      url
     }
   }
 `;
@@ -24,6 +20,6 @@ export const Failure = ({ error }) => (
   <div style={{ color: 'red' }}>Error: {error.message}</div>
 );
 
-export const Success = ({ tagLines }) => {
-  return <TagLineText>{tagLines[0].text}</TagLineText>;
+export const Success = ({ heroImages }) => {
+  return <HeroImage src={heroImages[0].url} alt="Delicious Greek food" />;
 };
