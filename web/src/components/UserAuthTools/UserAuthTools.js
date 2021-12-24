@@ -1,21 +1,5 @@
 import { useAuth } from '@redwoodjs/auth';
-import styled from 'styled-components';
-import { rainbowPurple } from 'src/utils/colors';
-
-const Button = styled.button`
-  display: block;
-  border-radius: 16px;
-  width: calc(50vw - 64px);
-  text-align: center;
-  text-decoration: none;
-  font-size: 24px;
-  color: #fefefe;
-  padding: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: ${rainbowPurple};
-`;
+import Button from 'src/components/Button/Button';
 
 const UserAuthTools = () => {
   const { loading, isAuthenticated, logIn, logOut } = useAuth();
@@ -46,6 +30,7 @@ const UserAuthTools = () => {
             });
           }
         }}
+        dark
       >
         {isAuthenticated ? 'Log out' : 'Log in'}
       </Button>

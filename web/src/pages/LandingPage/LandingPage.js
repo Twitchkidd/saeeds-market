@@ -7,6 +7,7 @@ import Nav from 'src/components/Nav';
 import Logo from 'src/assets/logo.svg';
 import TagLineCell from 'src/components/TagLineCell/TagLineCell';
 import UserAuthTools from 'src/components/UserAuthTools/UserAuthTools';
+import Button from 'src/components/Button/Button';
 
 const LandingPage = () => {
   const [taps, setTaps] = useState(0);
@@ -33,6 +34,7 @@ const LandingPage = () => {
         <UserAuthTools />
       )}
       <TagLineCell />
+      <Button big>Call In — (860) 440-2238</Button>
     </>
   );
 };
