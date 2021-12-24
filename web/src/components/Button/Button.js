@@ -16,6 +16,7 @@ const Button = styled.button`
   width: ${(props) => (props.big ? '100%' : 'none')};
   max-width: ${(props) => (props.big ? 'none' : verticalKeyline2)};
   padding: ${(props) => (props.big ? `${spacing1} 0` : spacing1)};
+  font-weight: 700;
 `;
 
 export default Button;
