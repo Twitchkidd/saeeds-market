@@ -1,13 +1,10 @@
-export const greekBlue = '#1269C7';
-export const dogwoodRose = '#C712C4';
-export const rainbowPurple = '#5612C7';
-export const alloyOrange = '#C77012';
-export const internationalOrange = '#C71612';
-export const vividMalachine = '#12C716';
-export const crayolaGreen = '#12C770';
-export const turquoiseSurf = '#12C4C7';
-export const mediumBlue = '#1512C7';
-export const kellyGreen = '#69C712';
-export const tigersEye = '#ED9638';
-export const grayWeightedAverageGammaAdjusted = '#9D9D9D';
-export const grayscaleDesaturated = '#6D6D6D';
+export const saeedsBlue = '#3951A2';
+export const blue100 = '#8092CF';
+export const blue200 = '#556BB4';
+export const blue300 = saeedsBlue;
+export const blue400 = '#1E3993';
+export const blue500 = '#122872';
+
+export const saeedsWhite = '#ffffff';
+
+export const eigengrau = '#14141d';

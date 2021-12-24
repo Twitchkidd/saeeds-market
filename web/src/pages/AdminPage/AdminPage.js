@@ -14,6 +14,8 @@ const AdminPage = () => {
 
       <h1>Admin Page</h1>
       <Link to={routes.tagLines()}>Tag Line</Link>
+      <Link to={routes.primaryCallToActionTexts()}>CTA Button Text</Link>
+      <Link to={routes.heroImages()}>Hero Image</Link>
       <UserAuthTools />
     </>
   );
