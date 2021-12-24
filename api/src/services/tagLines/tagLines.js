@@ -2,25 +2,25 @@ import { db } from 'src/lib/db';
 import { requireAuth } from 'src/lib/auth';
 
 export const tagLines = () => {
-  return db.tagLines.findMany();
+  return db.tagLine.findMany();
 };
 
 export const tagLine = ({ id }) => {
-  return db.tagLines.findUnique({
+  return db.tagLine.findUnique({
     where: { id },
   });
 };
 
 export const createTagLine = ({ input }) => {
   requireAuth({ role: 'admin' });
-  return db.tagLines.create({
+  return db.tagLine.create({
     data: input,
   });
 };
 
 export const updateTagLine = ({ id, input }) => {
   requireAuth({ role: 'admin' });
-  return db.tagLines.update({
+  return db.tagLine.update({
     data: input,
     where: { id },
   });
@@ -28,7 +28,7 @@ export const updateTagLine = ({ id, input }) => {
 
 export const deleteTagLine = ({ id }) => {
   requireAuth({ role: 'admin' });
-  return db.tagLines.delete({
+  return db.tagLine.delete({
     where: { id },
   });
 };

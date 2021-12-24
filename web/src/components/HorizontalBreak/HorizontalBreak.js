@@ -8,7 +8,7 @@ const HorizontalBreak = styled.div`
   flex-shrink: 0;
   background: #556bb4;
   /* margin: 42px 0; */
-  margin-bottom: 26px;
+  margin-bottom: 28px;
 `;
 
 export default HorizontalBreak;

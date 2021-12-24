@@ -8,81 +8,14 @@ generator client {
   binaryTargets = "native"
 }
 
-// Define your own datamodels here and run `yarn redwood prisma migrate dev`
-// to create migrations for them and apply to your dev DB.
-// TODO: Please remove the following example:
-model UserExample {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
-}
-
-model Titles {
+model TagLine {
   id        Int      @id @default(autoincrement())
   text      String
   createdAt DateTime @default(now())
 }
 
-model TagLines {
+model PrimaryCallToActionText {
   id        Int      @id @default(autoincrement())
   text      String
   createdAt DateTime @default(now())
 }
-
-model MenuLink {
-  id        Int      @id @default(autoincrement())
-  name      String
-  text      String
-  url       String
-  createdAt DateTime @default(now())
-}
-
-model WhatsNewHeader {
-  id        Int      @id @default(autoincrement())
-  text      String
-  createdAt DateTime @default(now())
-}
-
-model NewItem {
-  id          Int      @id @default(autoincrement())
-  title       String
-  description String
-  createdAt   DateTime @default(now())
-}
-
-model InternationalSectionHeading {
-  id        Int      @id @default(autoincrement())
-  text      String
-  createdAt DateTime @default(now())
-}
-
-model Image {
-  id        Int      @id @default(autoincrement())
-  title     String
-  url       String
-  createdAt DateTime @default(now())
-}
-
-model BusinessInfo {
-  id        Int      @id @default(autoincrement())
-  name      String
-  address   String
-  hours     String
-  phone     String
-  createdAt DateTime @default(now())
-}
-
-// model Product {
-//   id        Int      @id @default(autoincrement())
-//   name      String
-//   origin    Country? @relation(name: "ProductCountryOfOrigin")
-//   createdAt DateTime @default(now())
-// }
-
-// model Country {
-//   id        Int      @id @default(autoincrement())
-//   name      String
-//   flagSrc   String
-//   products  Product[] @relation(name: "ProductCountryOfOrigin")
-//   createdAt DateTime @default(now())
-// }

@@ -1,4 +1,4 @@
-import TagLinesCell from 'src/components/Header/TagLine/TagLinesCell';
+import TagLinesCell from 'src/components/TagLine/TagLinesCell';
 
 const TagLinesPage = () => {
   return <TagLinesCell />;
