@@ -6,13 +6,13 @@ import HorizontalBreak from 'src/components/HorizontalBreak';
 import Nav from 'src/components/Nav';
 import Logo from 'src/assets/logo.svg';
 import UberEats from 'src/assets/uberEats.svg';
-import DoorDash from 'src/assets/doorDash.svg';
+import DoorDash from 'src/Icons/DoorDash';
 import grubHub from '../../../assets/grubHub.png';
 import TagLineCell from 'src/components/TagLineCell/TagLineCell';
 import UserAuthTools from 'src/components/UserAuthTools/UserAuthTools';
 import Button from 'src/components/Button/Button';
 import HeroImageCell from 'src/components/HeroImageCell/HeroImageCell';
-import { spacing4 } from 'src/utils/spacing';
+import { spacing1, spacing4 } from 'src/utils/spacing';
 
 const DisplayText = styled.p`
   font-size: 1rem;
@@ -28,7 +28,7 @@ const ButtonsWrapper = styled.div`
   justify-content: space-around;
   /* gap: ${spacing4}; */
   /* padding: ${spacing4}; */
-  margin-bottom: ${spacing4};
+  margin-bottom: ${spacing1};
 `;
 
 const TestBox = styled.div`
@@ -65,13 +65,13 @@ const LandingPage = () => {
       <Button big>Call In — (860) 440-2238</Button>
       <DisplayText>Or get delivery:</DisplayText>
       <ButtonsWrapper>
+        <UberEats style={{ width: '90px', height: 'auto' }} />
         <img
           src={grubHub}
           alt="Order from GrubHub"
-          width="80px"
+          width="90px"
           height="auto"
         />
-        <UberEats style={{ width: '80px', height: 'auto' }} />
         <DoorDash />
       </ButtonsWrapper>
       <HeroImageCell />

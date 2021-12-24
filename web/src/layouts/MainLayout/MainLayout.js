@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 
 const Main = styled.main`
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-auto-flow: row;
+  place-items: center;
   padding-left: 17px;
   padding-right: 17px;
   position: relative;
