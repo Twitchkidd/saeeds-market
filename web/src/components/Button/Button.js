@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { saeedsBlue, blue400, saeedsWhite } from 'src/utils/colors';
-import { spacing1, verticalKeyline2 } from 'src/utils/spacing';
+import { verticalSpace1, verticalKeyline2 } from 'src/utils/spacing';
 import { fontSize1 } from 'src/utils/typography';
 
 const Button = styled.button`
@@ -13,9 +13,9 @@ const Button = styled.button`
   font-size: ${fontSize1};
   border-radius: 1px;
   text-decoration: none;
-  width: ${(props) => (props.big ? '100%' : 'none')};
-  max-width: ${(props) => (props.big ? 'none' : verticalKeyline2)};
-  padding: ${(props) => (props.big ? `${spacing1} 0` : spacing1)};
+  ${(props) => (props.big ? 'width: 100%;' : null)}
+  ${(props) => (props.big ? null : `max-width: ${verticalKeyline2};`)}
+  padding: ${(props) => (props.big ? `${verticalSpace1} 0` : verticalSpace1)};
   font-weight: 700;
 `;
 

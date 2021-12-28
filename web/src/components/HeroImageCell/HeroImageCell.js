@@ -1,14 +1,11 @@
-import { spacing1 } from 'src/utils/spacing';
 import styled from 'styled-components';
 
 const HeroImage = styled.img`
   width: 100%;
-  padding-bottom: 28px;
 `;
 
 const HeroLoader = styled.div`
   width: 100%;
-  padding-bottom: 28px;
 `;
 
 export const QUERY = gql`

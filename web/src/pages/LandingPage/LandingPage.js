@@ -1,37 +1,20 @@
-// import { Link, routes } from '@redwoodjs/router';
 import { useState } from 'react';
-import styled from 'styled-components';
 import { MetaTags } from '@redwoodjs/web';
-import HorizontalBreak from 'src/components/HorizontalBreak';
 import Nav from 'src/components/Nav';
+import HorizontalBreak from 'src/components/HorizontalBreak';
 import Logo from 'src/assets/logo.svg';
-import UberEats from 'src/assets/uberEats.svg';
-import DoorDash from 'src/Icons/DoorDash';
-import grubHub from '../../../assets/grubHub.png';
-import TagLineCell from 'src/components/TagLineCell/TagLineCell';
 import UserAuthTools from 'src/components/UserAuthTools/UserAuthTools';
+import TagLineCell from 'src/components/TagLineCell/TagLineCell';
+import DisplayText from 'src/components/DisplayText/DisplayText';
+import DeliveryButtons from 'src/components/DeliveryButtons/DeliveryButtons';
 import Button from 'src/components/Button/Button';
+import PrimaryCallToActionTextCell from 'src/components/PrimaryCallToActionTextCell/PrimaryCallToActionTextCell';
 import HeroImageCell from 'src/components/HeroImageCell/HeroImageCell';
-import { spacing1, spacing4 } from 'src/utils/spacing';
-
-const DisplayText = styled.p`
-  font-size: 1rem;
-  margin: 0;
-  margin-bottom: ${spacing4};
-`;
-
-const ButtonsWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-`;
+import { verticalKeyline2 } from 'src/utils/spacing';
 
 const LandingPage = () => {
   const [taps, setTaps] = useState(0);
   const handleClick = () => {
-    console.log(taps);
     setTaps((prevTaps) => ++prevTaps);
   };
   return (
@@ -47,24 +30,20 @@ const LandingPage = () => {
       {taps < 8 ? (
         <Logo
           onClick={handleClick}
-          style={{ width: '309px', height: '309px' }}
+          style={{
+            width: verticalKeyline2,
+            height: verticalKeyline2,
+          }}
         />
       ) : (
         <UserAuthTools />
       )}
       <TagLineCell />
-      <Button big>Call In — (860) 440-2238</Button>
+      <Button big>
+        <PrimaryCallToActionTextCell />
+      </Button>
       <DisplayText>Or get delivery:</DisplayText>
-      <ButtonsWrapper>
-        <UberEats style={{ width: '90px', height: 'auto' }} />
-        <img
-          src={grubHub}
-          alt="Order from GrubHub"
-          width="90px"
-          height="auto"
-        />
-        <DoorDash />
-      </ButtonsWrapper>
+      <DeliveryButtons />
       <HeroImageCell />
     </>
   );

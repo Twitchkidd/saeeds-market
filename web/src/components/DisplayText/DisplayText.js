@@ -1,10 +1,8 @@
-const DisplayText = () => {
-  return (
-    <div>
-      <h2>{'DisplayText'}</h2>
-      <p>{'Find me in ./web/src/components/DisplayText/DisplayText.js'}</p>
-    </div>
-  );
-};
+import styled from 'styled-components';
+import { fontSize4 } from 'src/utils/typography';
+
+const DisplayText = styled.p`
+  font-size: ${fontSize4};
+`;
 
 export default DisplayText;
