@@ -26,15 +26,6 @@ const ButtonsWrapper = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  /* gap: ${spacing4}; */
-  /* padding: ${spacing4}; */
-  margin-bottom: ${spacing1};
-`;
-
-const TestBox = styled.div`
-  width: 60px;
-  height: 20px;
-  background: blue;
 `;
 
 const LandingPage = () => {
@@ -56,7 +47,7 @@ const LandingPage = () => {
       {taps < 8 ? (
         <Logo
           onClick={handleClick}
-          style={{ width: '309px', height: '309px', marginBottom: '28px' }}
+          style={{ width: '309px', height: '309px' }}
         />
       ) : (
         <UserAuthTools />

@@ -16,7 +16,6 @@ const UserAuthTools = () => {
         height: '309px',
         display: 'grid',
         placeItems: 'center',
-        flexShrink: 0,
       }}
     >
       <Button

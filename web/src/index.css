@@ -5,6 +5,7 @@ body {
   overscroll-behavior-y: none;
   position: fixed;
   overflow: hidden;
+  font-size: 16px;
 }
 
 #redwood-app {
@@ -13,7 +14,6 @@ body {
   display: flex;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
-  font-size: 16px;
 }
 
 h1,
@@ -23,6 +23,7 @@ h4,
 h5,
 h6 {
   font-family: 'GFS Didot', serif;
+  margin: 0;
 }
 
 p,
@@ -32,6 +33,7 @@ span,
 button,
 a {
   font-family: 'GFS Neohellenic', sans-serif;
+  margin: 0;
 }
 
 h1 {

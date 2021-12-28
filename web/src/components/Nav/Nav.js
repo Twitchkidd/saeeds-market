@@ -4,6 +4,7 @@ import NavOpen from 'src/Icons/NavOpen';
 import NavClose from 'src/Icons/NavClose';
 
 const Wrapper = styled.nav`
+  margin: 0;
   .small-menu-classname {
     width: 40px;
     margin-top: 18px;
