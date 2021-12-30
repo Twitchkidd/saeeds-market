@@ -8,6 +8,10 @@
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 
 import { Router, Route, Set, Private } from '@redwoodjs/router'
+import ProductTypesLayout from 'src/layouts/ProductTypesLayout'
+import ProductsLayout from 'src/layouts/ProductsLayout'
+import CountriesLayout from 'src/layouts/CountriesLayout'
+import NewItemsLayout from 'src/layouts/NewItemsLayout'
 import WhatsNewTextsLayout from 'src/layouts/WhatsNewTextsLayout'
 import ProductsSectionHeadersLayout from 'src/layouts/ProductsSectionHeadersLayout'
 import InternationalSectionHeadersLayout from 'src/layouts/InternationalSectionHeadersLayout'
@@ -21,6 +25,30 @@ import MainLayout from 'src/layouts/MainLayout/MainLayout';
 const Routes = () => {
   return (
     <Router>
+      <Set wrap={ProductTypesLayout}>
+        <Route path="/product-types/new" page={ProductTypeNewProductTypePage} name="newProductType" />
+        <Route path="/product-types/{id:Int}/edit" page={ProductTypeEditProductTypePage} name="editProductType" />
+        <Route path="/product-types/{id:Int}" page={ProductTypeProductTypePage} name="productType" />
+        <Route path="/product-types" page={ProductTypeProductTypesPage} name="productTypes" />
+      </Set>
+      <Set wrap={ProductsLayout}>
+        <Route path="/products/new" page={ProductNewProductPage} name="newProduct" />
+        <Route path="/products/{id:Int}/edit" page={ProductEditProductPage} name="editProduct" />
+        <Route path="/products/{id:Int}" page={ProductProductPage} name="product" />
+        <Route path="/products" page={ProductProductsPage} name="products" />
+      </Set>
+      <Set wrap={CountriesLayout}>
+        <Route path="/countries/new" page={CountryNewCountryPage} name="newCountry" />
+        <Route path="/countries/{id:Int}/edit" page={CountryEditCountryPage} name="editCountry" />
+        <Route path="/countries/{id:Int}" page={CountryCountryPage} name="country" />
+        <Route path="/countries" page={CountryCountriesPage} name="countries" />
+      </Set>
+      <Set wrap={NewItemsLayout}>
+        <Route path="/new-items/new" page={NewItemNewNewItemPage} name="newNewItem" />
+        <Route path="/new-items/{id:Int}/edit" page={NewItemEditNewItemPage} name="editNewItem" />
+        <Route path="/new-items/{id:Int}" page={NewItemNewItemPage} name="newItem" />
+        <Route path="/new-items" page={NewItemNewItemsPage} name="newItems" />
+      </Set>
       <Set wrap={WhatsNewTextsLayout}>
         <Route path="/whats-new-texts/new" page={WhatsNewTextNewWhatsNewTextPage} name="newWhatsNewText" />
         <Route path="/whats-new-texts/{id:Int}/edit" page={WhatsNewTextEditWhatsNewTextPage} name="editWhatsNewText" />
