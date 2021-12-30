@@ -1,7 +1,7 @@
 export const QUERY = gql`
-  query FindDeliveryTextQuery($id: Int!) {
-    deliveryText: deliveryText(id: $id) {
-      id
+  query FindDeliveryTextsQuery {
+    deliveryTexts {
+      text
     }
   }
 `;
@@ -14,6 +14,6 @@ export const Failure = ({ error }) => (
   <div style={{ color: 'red' }}>Error: {error.message}</div>
 );
 
-export const Success = ({ deliveryText }) => {
-  return <div>{JSON.stringify(deliveryText)}</div>;
+export const Success = ({ deliveryTexts }) => {
+  return <div>{deliveryTexts[0].text}</div>;
 };

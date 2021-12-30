@@ -29,6 +29,18 @@ const Routes = () => {
         <Set wrap={MainLayout}>
           <Route path="/admin" page={AdminPage} name="admin" />
         </Set>
+        <Set wrap={TagLinesLayout}>
+          <Route path="/admin/tag-line/new" page={TagLineNewTagLinePage} name="newTagLine" />
+          <Route path="/admin/tag-line/{id:Int}/edit" page={TagLineEditTagLinePage} name="editTagLine" />
+          <Route path="/admin/tag-line/{id:Int}" page={TagLineTagLinePage} name="tagLine" />
+          <Route path="/admin/tag-line" page={TagLineTagLinesPage} name="tagLines" />
+        </Set>
+        <Set wrap={DeliveryTextsLayout}>
+          <Route path="/admin/delivery-text/new" page={DeliveryTextNewDeliveryTextPage} name="newDeliveryText" />
+          <Route path="/admin/delivery-text/{id:Int}/edit" page={DeliveryTextEditDeliveryTextPage} name="editDeliveryText" />
+          <Route path="/admin/delivery-text/{id:Int}" page={DeliveryTextDeliveryTextPage} name="deliveryText" />
+          <Route path="/admin/delivery-text" page={DeliveryTextDeliveryTextsPage} name="deliveryTexts" />
+        </Set>
         <Set wrap={ProductTypesLayout}>
           <Route path="/admin/product-types/new" page={ProductTypeNewProductTypePage} name="newProductType" />
           <Route path="/admin/product-types/{id:Int}/edit" page={ProductTypeEditProductTypePage} name="editProductType" />
@@ -46,6 +58,12 @@ const Routes = () => {
           <Route path="/admin/countries/{id:Int}/edit" page={CountryEditCountryPage} name="editCountry" />
           <Route path="/admin/countries/{id:Int}" page={CountryCountryPage} name="country" />
           <Route path="/admin/countries" page={CountryCountriesPage} name="countries" />
+        </Set>
+        <Set wrap={DeliveryTextsLayout}>
+          <Route path="/admin/delivery-texts/new" page={DeliveryTextNewDeliveryTextPage} name="newDeliveryText" />
+          <Route path="/admin/delivery-texts/{id:Int}/edit" page={DeliveryTextEditDeliveryTextPage} name="editDeliveryText" />
+          <Route path="/admin/delivery-texts/{id:Int}" page={DeliveryTextDeliveryTextPage} name="deliveryText" />
+          <Route path="/admin/delivery-texts" page={DeliveryTextDeliveryTextsPage} name="deliveryTexts" />
         </Set>
         <Set wrap={NewItemsLayout}>
           <Route path="/admin/new-items/new" page={NewItemNewNewItemPage} name="newNewItem" />
@@ -71,23 +89,11 @@ const Routes = () => {
           <Route path="/admin/international-section-headers/{id:Int}" page={InternationalSectionHeaderInternationalSectionHeaderPage} name="internationalSectionHeader" />
           <Route path="/admin/international-section-headers" page={InternationalSectionHeaderInternationalSectionHeadersPage} name="internationalSectionHeaders" />
         </Set>
-        <Set wrap={DeliveryTextsLayout}>
-          <Route path="/admin/delivery-texts/new" page={DeliveryTextNewDeliveryTextPage} name="newDeliveryText" />
-          <Route path="/admin/delivery-texts/{id:Int}/edit" page={DeliveryTextEditDeliveryTextPage} name="editDeliveryText" />
-          <Route path="/admin/delivery-texts/{id:Int}" page={DeliveryTextDeliveryTextPage} name="deliveryText" />
-          <Route path="/admin/delivery-texts" page={DeliveryTextDeliveryTextsPage} name="deliveryTexts" />
-        </Set>
         <Set wrap={BusinessInfosLayout}>
           <Route path="/admin/business-infos/new" page={BusinessInfoNewBusinessInfoPage} name="newBusinessInfo" />
           <Route path="/admin/business-infos/{id:Int}/edit" page={BusinessInfoEditBusinessInfoPage} name="editBusinessInfo" />
           <Route path="/admin/business-infos/{id:Int}" page={BusinessInfoBusinessInfoPage} name="businessInfo" />
           <Route path="/admin/business-infos" page={BusinessInfoBusinessInfosPage} name="businessInfos" />
-        </Set>
-        <Set wrap={TagLinesLayout}>
-          <Route path="/admin/tag-lines/new" page={TagLineNewTagLinePage} name="newTagLine" />
-          <Route path="/admin/tag-lines/{id:Int}/edit" page={TagLineEditTagLinePage} name="editTagLine" />
-          <Route path="/admin/tag-lines/{id:Int}" page={TagLineTagLinePage} name="tagLine" />
-          <Route path="/admin/tag-lines" page={TagLineTagLinesPage} name="tagLines" />
         </Set>
         <Set wrap={PrimaryCallToActionTextsLayout}>
           <Route path="/admin/primary-call-to-action-texts/new" page={PrimaryCallToActionTextNewPrimaryCallToActionTextPage} name="newPrimaryCallToActionText" />
