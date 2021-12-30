@@ -33,6 +33,12 @@ model HeroImage {
   createdAt DateTime @default(now())
 }
 
+model WhatsNewText {
+  id        Int      @id @default(autoincrement())
+  text      String
+  createdAt DateTime @default(now())
+}
+
 model NewItem {
   id          Int      @id @default(autoincrement())
   title       String
@@ -49,10 +55,12 @@ model InternationalSectionHeader {
 }
 
 model ProductsSectionHeader {
-  id        Int      @id @default(autoincrement())
-  text      String
-  imageUrls String[]
-  createdAt DateTime @default(now())
+  id                Int      @id @default(autoincrement())
+  text              String
+  imageUrls         String[]
+  imageDescriptions String[]
+  weCarry           String
+  createdAt         DateTime @default(now())
 }
 
 model Country {
