@@ -9,8 +9,8 @@ export const schema = gql`
   }
 
   type Query {
-    businessInfos: [BusinessInfo!]! @requireAuth
-    businessInfo(id: Int!): BusinessInfo @requireAuth
+    businessInfos: [BusinessInfo!]! @skipAuth
+    businessInfo(id: Int!): BusinessInfo @skipAuth
   }
 
   input CreateBusinessInfoInput {

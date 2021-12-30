@@ -6,8 +6,8 @@ export const schema = gql`
   }
 
   type Query {
-    whatsNewTexts: [WhatsNewText!]! @requireAuth
-    whatsNewText(id: Int!): WhatsNewText @requireAuth
+    whatsNewTexts: [WhatsNewText!]! @skipAuth
+    whatsNewText(id: Int!): WhatsNewText @skipAuth
   }
 
   input CreateWhatsNewTextInput {

@@ -7,8 +7,8 @@ export const schema = gql`
   }
 
   type Query {
-    productsSectionHeaders: [ProductsSectionHeader!]! @requireAuth
-    productsSectionHeader(id: Int!): ProductsSectionHeader @requireAuth
+    productsSectionHeaders: [ProductsSectionHeader!]! @skipAuth
+    productsSectionHeader(id: Int!): ProductsSectionHeader @skipAuth
   }
 
   input CreateProductsSectionHeaderInput {

@@ -6,8 +6,8 @@ export const schema = gql`
   }
 
   type Query {
-    deliveryTexts: [DeliveryText!]! @requireAuth
-    deliveryText(id: Int!): DeliveryText @requireAuth
+    deliveryTexts: [DeliveryText!]! @skipAuth
+    deliveryText(id: Int!): DeliveryText @skipAuth
   }
 
   input CreateDeliveryTextInput {
