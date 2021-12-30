@@ -1,7 +1,7 @@
 export const QUERY = gql`
-  query FindWhatsNewTextQuery($id: Int!) {
-    whatsNewText: whatsNewText(id: $id) {
-      id
+  query FindWhatsNewTextsQuery {
+    whatsNewTexts {
+      text
     }
   }
 `;
@@ -14,6 +14,6 @@ export const Failure = ({ error }) => (
   <div style={{ color: 'red' }}>Error: {error.message}</div>
 );
 
-export const Success = ({ whatsNewText }) => {
-  return <div>{JSON.stringify(whatsNewText)}</div>;
+export const Success = ({ whatsNewTexts }) => {
+  return <div>{whatsNewTexts[0].text}</div>;
 };

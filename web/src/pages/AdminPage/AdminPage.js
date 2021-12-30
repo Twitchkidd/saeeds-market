@@ -15,7 +15,10 @@ const AdminPage = () => {
       <h1>Admin Page</h1>
       <Link to={routes.tagLines()}>Tag Line</Link>
       <Link to={routes.deliveryTexts()}>Delivery Text</Link>
-      <Link to={routes.primaryCallToActionTexts()}>CTA Button Text</Link>
+      <Link to={routes.primaryCallToActionTexts()}>
+        Call To Action Button Text
+      </Link>
+      <Link to={routes.whatsNewTexts()}>What's New Section Text</Link>
       <Link to={routes.heroImages()}>Hero Image</Link>
       <UserAuthTools />
     </>

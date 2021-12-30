@@ -41,6 +41,12 @@ const Routes = () => {
           <Route path="/admin/delivery-text/{id:Int}" page={DeliveryTextDeliveryTextPage} name="deliveryText" />
           <Route path="/admin/delivery-text" page={DeliveryTextDeliveryTextsPage} name="deliveryTexts" />
         </Set>
+        <Set wrap={WhatsNewTextsLayout}>
+          <Route path="/admin/whats-new-text/new" page={WhatsNewTextNewWhatsNewTextPage} name="newWhatsNewText" />
+          <Route path="/admin/whats-new-text/{id:Int}/edit" page={WhatsNewTextEditWhatsNewTextPage} name="editWhatsNewText" />
+          <Route path="/admin/whats-new-text/{id:Int}" page={WhatsNewTextWhatsNewTextPage} name="whatsNewText" />
+          <Route path="/admin/whats-new-text" page={WhatsNewTextWhatsNewTextsPage} name="whatsNewTexts" />
+        </Set>
         <Set wrap={ProductTypesLayout}>
           <Route path="/admin/product-types/new" page={ProductTypeNewProductTypePage} name="newProductType" />
           <Route path="/admin/product-types/{id:Int}/edit" page={ProductTypeEditProductTypePage} name="editProductType" />
@@ -59,23 +65,11 @@ const Routes = () => {
           <Route path="/admin/countries/{id:Int}" page={CountryCountryPage} name="country" />
           <Route path="/admin/countries" page={CountryCountriesPage} name="countries" />
         </Set>
-        <Set wrap={DeliveryTextsLayout}>
-          <Route path="/admin/delivery-texts/new" page={DeliveryTextNewDeliveryTextPage} name="newDeliveryText" />
-          <Route path="/admin/delivery-texts/{id:Int}/edit" page={DeliveryTextEditDeliveryTextPage} name="editDeliveryText" />
-          <Route path="/admin/delivery-texts/{id:Int}" page={DeliveryTextDeliveryTextPage} name="deliveryText" />
-          <Route path="/admin/delivery-texts" page={DeliveryTextDeliveryTextsPage} name="deliveryTexts" />
-        </Set>
         <Set wrap={NewItemsLayout}>
           <Route path="/admin/new-items/new" page={NewItemNewNewItemPage} name="newNewItem" />
           <Route path="/admin/new-items/{id:Int}/edit" page={NewItemEditNewItemPage} name="editNewItem" />
           <Route path="/admin/new-items/{id:Int}" page={NewItemNewItemPage} name="newItem" />
           <Route path="/admin/new-items" page={NewItemNewItemsPage} name="newItems" />
-        </Set>
-        <Set wrap={WhatsNewTextsLayout}>
-          <Route path="/admin/whats-new-texts/new" page={WhatsNewTextNewWhatsNewTextPage} name="newWhatsNewText" />
-          <Route path="/admin/whats-new-texts/{id:Int}/edit" page={WhatsNewTextEditWhatsNewTextPage} name="editWhatsNewText" />
-          <Route path="/admin/whats-new-texts/{id:Int}" page={WhatsNewTextWhatsNewTextPage} name="whatsNewText" />
-          <Route path="/admin/whats-new-texts" page={WhatsNewTextWhatsNewTextsPage} name="whatsNewTexts" />
         </Set>
         <Set wrap={ProductsSectionHeadersLayout}>
           <Route path="/admin/products-section-headers/new" page={ProductsSectionHeaderNewProductsSectionHeaderPage} name="newProductsSectionHeader" />
