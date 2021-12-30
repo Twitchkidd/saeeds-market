@@ -20,6 +20,7 @@ const AdminPage = () => {
       </Link>
       <Link to={routes.whatsNewTexts()}>What's New Section Text</Link>
       <Link to={routes.heroImages()}>Hero Image</Link>
+      <Link to={routes.businessInfos()}>Business Info</Link>
       <UserAuthTools />
     </>
   );

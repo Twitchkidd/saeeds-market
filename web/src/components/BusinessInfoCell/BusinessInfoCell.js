@@ -1,7 +1,10 @@
 export const QUERY = gql`
-  query FindBusinessInfoQuery($id: Int!) {
-    businessInfo: businessInfo(id: $id) {
-      id
+  query FindBusinessInfosQuery {
+    businessInfos {
+      name
+      address
+      hours
+      number
     }
   }
 `;
@@ -14,6 +17,14 @@ export const Failure = ({ error }) => (
   <div style={{ color: 'red' }}>Error: {error.message}</div>
 );
 
-export const Success = ({ businessInfo }) => {
-  return <div>{JSON.stringify(businessInfo)}</div>;
+export const Success = ({ businessInfos }) => {
+  const info = businessInfos[0];
+  return (
+    <>
+      <p>{info.name}</p>
+      <p>{info.addess}</p>
+      <p>{info.hours}</p>
+      <p>{info.number}</p>
+    </>
+  );
 };

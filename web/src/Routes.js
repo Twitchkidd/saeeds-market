@@ -83,12 +83,6 @@ const Routes = () => {
           <Route path="/admin/international-section-headers/{id:Int}" page={InternationalSectionHeaderInternationalSectionHeaderPage} name="internationalSectionHeader" />
           <Route path="/admin/international-section-headers" page={InternationalSectionHeaderInternationalSectionHeadersPage} name="internationalSectionHeaders" />
         </Set>
-        <Set wrap={BusinessInfosLayout}>
-          <Route path="/admin/business-infos/new" page={BusinessInfoNewBusinessInfoPage} name="newBusinessInfo" />
-          <Route path="/admin/business-infos/{id:Int}/edit" page={BusinessInfoEditBusinessInfoPage} name="editBusinessInfo" />
-          <Route path="/admin/business-infos/{id:Int}" page={BusinessInfoBusinessInfoPage} name="businessInfo" />
-          <Route path="/admin/business-infos" page={BusinessInfoBusinessInfosPage} name="businessInfos" />
-        </Set>
         <Set wrap={PrimaryCallToActionTextsLayout}>
           <Route path="/admin/primary-call-to-action-texts/new" page={PrimaryCallToActionTextNewPrimaryCallToActionTextPage} name="newPrimaryCallToActionText" />
           <Route path="/admin/primary-call-to-action-texts/{id:Int}/edit" page={PrimaryCallToActionTextEditPrimaryCallToActionTextPage} name="editPrimaryCallToActionText" />
@@ -100,6 +94,12 @@ const Routes = () => {
           <Route path="/admin/hero-images/{id:Int}/edit" page={HeroImageEditHeroImagePage} name="editHeroImage" />
           <Route path="/admin/hero-images/{id:Int}" page={HeroImageHeroImagePage} name="heroImage" />
           <Route path="/admin/hero-images" page={HeroImageHeroImagesPage} name="heroImages" />
+        </Set>
+        <Set wrap={BusinessInfosLayout}>
+          <Route path="/admin/business-info/new" page={BusinessInfoNewBusinessInfoPage} name="newBusinessInfo" />
+          <Route path="/admin/business-info/{id:Int}/edit" page={BusinessInfoEditBusinessInfoPage} name="editBusinessInfo" />
+          <Route path="/admin/business-info/{id:Int}" page={BusinessInfoBusinessInfoPage} name="businessInfo" />
+          <Route path="/admin/business-info" page={BusinessInfoBusinessInfosPage} name="businessInfos" />
         </Set>
       </Private>
       <Set wrap={MainLayout}>
