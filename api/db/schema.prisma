@@ -20,8 +20,75 @@ model PrimaryCallToActionText {
   createdAt DateTime @default(now())
 }
 
+model DeliveryText {
+  id        Int      @id @default(autoincrement())
+  text      String
+  createdAt DateTime @default(now())
+}
+
 model HeroImage {
-  id    Int    @id @default(autoincrement())
-  title String
-  url   String
+  id        Int      @id @default(autoincrement())
+  title     String
+  url       String
+  createdAt DateTime @default(now())
+}
+
+model NewItem {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  imageUrl    String
+  createdAt   DateTime @default(now())
+}
+
+model InternationalSectionHeader {
+  id        Int      @id @default(autoincrement())
+  text      String
+  withFrom  String
+  createdAt DateTime @default(now())
+}
+
+model ProductsSectionHeader {
+  id        Int      @id @default(autoincrement())
+  text      String
+  imageUrls String[]
+  createdAt DateTime @default(now())
+}
+
+model Country {
+  id        Int       @id @default(autoincrement())
+  name      String
+  abbr      String
+  flagUrl   String
+  imageUrl  String
+  products  Product[]
+  createdAt DateTime  @default(now())
+}
+
+model ProductType {
+  id        Int       @id @default(autoincrement())
+  name      String
+  important Boolean
+  imageUrl  String?
+  products  Product[]
+  createdAt DateTime  @default(now())
+}
+
+model Product {
+  id        Int          @id @default(autoincrement())
+  name      String
+  country   Country?     @relation(fields: [countryId], references: [id])
+  countryId Int
+  type      ProductType? @relation(fields: [typeId], references: [id])
+  typeId    Int
+  createdAt DateTime     @default(now())
+}
+
+model BusinessInfo {
+  id        Int      @id @default(autoincrement())
+  name      String
+  address   String
+  hours     String
+  number    String
+  createdAt DateTime @default(now())
 }

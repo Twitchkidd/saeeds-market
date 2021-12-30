@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { verticalSpace1 } from 'src/utils/spacing';
 
-const Main = styled.main`
+const Wrapper = styled.div`
   display: grid;
   grid-auto-flow: row;
   place-items: center;
@@ -16,7 +16,7 @@ const Main = styled.main`
 `;
 
 const MainLayout = ({ children }) => {
-  return <Main>{children}</Main>;
+  return <Wrapper>{children}</Wrapper>;
 };
 
 export default MainLayout;
