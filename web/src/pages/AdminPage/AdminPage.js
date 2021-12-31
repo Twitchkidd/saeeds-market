@@ -14,12 +14,18 @@ const AdminPage = () => {
 
       <h1>Admin Page</h1>
       <Link to={routes.tagLines()}>Tag Line</Link>
-      <Link to={routes.deliveryTexts()}>Delivery Text</Link>
-      <Link to={routes.primaryCallToActionTexts()}>
-        Call To Action Button Text
-      </Link>
-      <Link to={routes.whatsNewTexts()}>What's New Section Text</Link>
+      <Link to={routes.primaryCallToActionTexts()}>Call To Action Button</Link>
       <Link to={routes.heroImages()}>Hero Image</Link>
+      <Link to={routes.deliveryTexts()}>Delivery Text</Link>
+      <Link to={routes.whatsNewTexts()}>What's New Section Header</Link>
+      <Link to={routes.newItems()}>New Item Posts</Link>
+      <Link to={routes.countries()}>Countries</Link>
+      <Link to={routes.productTypes()}>Product Types</Link>
+      <Link to={routes.products()}>Products</Link>
+      <Link to={routes.internationalSectionHeaders()}>
+        International Section Header
+      </Link>
+      <Link to={routes.productsSectionHeaders()}>Products Section Header</Link>
       <Link to={routes.businessInfos()}>Business Info</Link>
       <UserAuthTools />
     </>

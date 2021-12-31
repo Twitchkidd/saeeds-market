@@ -6,16 +6,21 @@ import {
   TextField,
   Submit,
 } from '@redwoodjs/forms';
+import { PickerInline } from 'filestack-react';
 
-const formatDatetime = value => {
+const formatDatetime = (value) => {
   if (value) {
     return value.replace(/:\d{2}\.\d{3}\w/, '');
   }
 };
 
-const CountryForm = props => {
-  const onSubmit = data => {
+const CountryForm = (props) => {
+  const onSubmit = (data) => {
     props.onSave(data, props?.country?.id);
+  };
+
+  const onFileUpload = (response) => {
+    console.info(response);
   };
 
   return (
@@ -62,22 +67,10 @@ const CountryForm = props => {
 
         <FieldError name="abbr" className="rw-field-error" />
 
-        <Label
-          name="flagUrl"
-          className="rw-label"
-          errorClassName="rw-label rw-label-error"
-        >
-          Flag url
-        </Label>
-        <TextField
-          name="flagUrl"
-          defaultValue={props.country?.flagUrl}
-          className="rw-input"
-          errorClassName="rw-input rw-input-error"
-          validation={{ required: true }}
+        <PickerInline
+          apikey={process.env.REDWOOD_ENV_FILESTACK_API_KEY}
+          onSuccess={onFileUpload}
         />
-
-        <FieldError name="flagUrl" className="rw-field-error" />
 
         <Label
           name="imageUrl"

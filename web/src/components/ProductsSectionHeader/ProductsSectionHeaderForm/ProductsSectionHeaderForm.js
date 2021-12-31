@@ -6,16 +6,21 @@ import {
   TextField,
   Submit,
 } from '@redwoodjs/forms';
+import { PickerInline } from 'filestack-react';
 
-const formatDatetime = value => {
+const formatDatetime = (value) => {
   if (value) {
     return value.replace(/:\d{2}\.\d{3}\w/, '');
   }
 };
 
-const ProductsSectionHeaderForm = props => {
-  const onSubmit = data => {
+const ProductsSectionHeaderForm = (props) => {
+  const onSubmit = (data) => {
     props.onSave(data, props?.productsSectionHeader?.id);
+  };
+
+  const onFileUpload = (response) => {
+    console.info(response);
   };
 
   return (

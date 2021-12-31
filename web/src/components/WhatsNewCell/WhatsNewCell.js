@@ -1,7 +1,9 @@
 export const QUERY = gql`
-  query FindWhatsNewQuery($id: Int!) {
-    whatsNew: whatsNew(id: $id) {
-      id
+  query FindWhatsNewQuery {
+    newItems {
+      title
+      description
+      imageUrl
     }
   }
 `;
