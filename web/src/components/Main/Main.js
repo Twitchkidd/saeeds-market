@@ -16,9 +16,17 @@ import InternationalSectionHeaderCell from 'src/components/InternationalSectionH
 import InternationalSectionCell from 'src/components/InternationalSectionCell/InternationalSectionCell';
 import ProductsSectionHeaderCell from 'src/components/ProductsSectionHeaderCell/ProductsSectionHeaderCell';
 import ProductsSectionCell from 'src/components/ProductsSectionCell/ProductsSectionCell';
-import { verticalKeyline2 } from 'src/utils/spacing';
+import { verticalKeyline2, verticalSpace1 } from 'src/utils/spacing';
 
-const MainWrapper = styled.main``;
+const MainWrapper = styled.main`
+  display: grid;
+  place-items: center;
+  grid-auto-flow: row;
+
+  & > * {
+    margin-bottom: ${verticalSpace1};
+  }
+`;
 
 const SectionWrapper = styled.section``;
 

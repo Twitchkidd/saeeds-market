@@ -5,18 +5,19 @@ const Wrapper = styled.div`
   display: grid;
   grid-auto-flow: row;
   place-items: center;
-  min-height: 100vh;
-  min-width: 380px;
-  padding-left: 17px;
-  padding-right: 17px;
+
   position: relative;
+
+  min-height: 100vh;
+  width: 100vw;
+  padding-left: 4.1vw; /* 17 / 414 = 0.04106280193236715 */
+  padding-right: 4.1vw;
+
   & > * {
     margin-bottom: ${verticalSpace1};
   }
 `;
 
-const MainLayout = ({ children }) => {
-  return <Wrapper>{children}</Wrapper>;
-};
+const MainLayout = ({ children }) => <Wrapper>{children}</Wrapper>;
 
 export default MainLayout;
