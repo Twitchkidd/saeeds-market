@@ -18,6 +18,8 @@ const Wrapper = styled.div`
   }
 `;
 
-const MainLayout = ({ children }) => <Wrapper>{children}</Wrapper>;
+const MainLayout = ({ children }) => (
+  <Wrapper id="main-layout">{children}</Wrapper>
+);
 
 export default MainLayout;
