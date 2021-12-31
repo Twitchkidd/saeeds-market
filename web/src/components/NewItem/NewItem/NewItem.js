@@ -10,7 +10,7 @@ const DELETE_NEW_ITEM_MUTATION = gql`
   }
 `;
 
-const jsonDisplay = obj => {
+const jsonDisplay = (obj) => {
   return (
     <pre>
       <code>{JSON.stringify(obj, null, 2)}</code>
@@ -18,7 +18,7 @@ const jsonDisplay = obj => {
   );
 };
 
-const timeTag = datetime => {
+const timeTag = (datetime) => {
   return (
     <time dateTime={datetime} title={datetime}>
       {new Date(datetime).toUTCString()}
@@ -26,7 +26,7 @@ const timeTag = datetime => {
   );
 };
 
-const checkboxInputTag = checked => {
+const checkboxInputTag = (checked) => {
   return <input type="checkbox" checked={checked} disabled />;
 };
 
@@ -36,15 +36,21 @@ const NewItem = ({ newItem }) => {
       toast.success('NewItem deleted');
       navigate(routes.newItems());
     },
-    onError: error => {
+    onError: (error) => {
       toast.error(error.message);
     },
   });
 
-  const onDeleteClick = id => {
+  const onDeleteClick = (id) => {
     if (confirm('Are you sure you want to delete newItem ' + id + '?')) {
       deleteNewItem({ variables: { id } });
     }
+  };
+
+  const thumbnail = (url) => {
+    const parts = url.split('/');
+    parts.splice(3, 0, 'resize=width:100');
+    return parts.join('/');
   };
 
   return (
@@ -70,8 +76,12 @@ const NewItem = ({ newItem }) => {
               <td>{newItem.description}</td>
             </tr>
             <tr>
-              <th>Image url</th>
-              <td>{newItem.imageUrl}</td>
+              <a href={newItem.url} target="_blank">
+                <img
+                  src={thumbnail(newItem.url)}
+                  style={{ maxWidth: '50px' }}
+                />
+              </a>
             </tr>
             <tr>
               <th>Created at</th>

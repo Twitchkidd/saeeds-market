@@ -10,7 +10,7 @@ const DELETE_COUNTRY_MUTATION = gql`
   }
 `;
 
-const jsonDisplay = obj => {
+const jsonDisplay = (obj) => {
   return (
     <pre>
       <code>{JSON.stringify(obj, null, 2)}</code>
@@ -18,7 +18,7 @@ const jsonDisplay = obj => {
   );
 };
 
-const timeTag = datetime => {
+const timeTag = (datetime) => {
   return (
     <time dateTime={datetime} title={datetime}>
       {new Date(datetime).toUTCString()}
@@ -26,7 +26,7 @@ const timeTag = datetime => {
   );
 };
 
-const checkboxInputTag = checked => {
+const checkboxInputTag = (checked) => {
   return <input type="checkbox" checked={checked} disabled />;
 };
 
@@ -36,15 +36,21 @@ const Country = ({ country }) => {
       toast.success('Country deleted');
       navigate(routes.countries());
     },
-    onError: error => {
+    onError: (error) => {
       toast.error(error.message);
     },
   });
 
-  const onDeleteClick = id => {
+  const onDeleteClick = (id) => {
     if (confirm('Are you sure you want to delete country ' + id + '?')) {
       deleteCountry({ variables: { id } });
     }
+  };
+
+  const thumbnail = (url) => {
+    const parts = url.split('/');
+    parts.splice(3, 0, 'resize=width:100');
+    return parts.join('/');
   };
 
   return (
@@ -74,8 +80,12 @@ const Country = ({ country }) => {
               <td>{country.flagUrl}</td>
             </tr>
             <tr>
-              <th>Image url</th>
-              <td>{country.imageUrl}</td>
+              <a href={country.url} target="_blank">
+                <img
+                  src={thumbnail(country.url)}
+                  style={{ maxWidth: '50px' }}
+                />
+              </a>
             </tr>
             <tr>
               <th>Created at</th>

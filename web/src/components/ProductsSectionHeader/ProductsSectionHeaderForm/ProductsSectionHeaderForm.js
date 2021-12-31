@@ -1,3 +1,4 @@
+// import { useState } from 'react';
 import {
   Form,
   FormError,
@@ -6,7 +7,7 @@ import {
   TextField,
   Submit,
 } from '@redwoodjs/forms';
-import { PickerInline } from 'filestack-react';
+// import { PickerInline } from 'filestack-react';
 
 const formatDatetime = (value) => {
   if (value) {
@@ -15,13 +16,16 @@ const formatDatetime = (value) => {
 };
 
 const ProductsSectionHeaderForm = (props) => {
+  // const [url, setUrl] = useState(props?.image?.url);
   const onSubmit = (data) => {
-    props.onSave(data, props?.productsSectionHeader?.id);
+    // const dataWithUrl = Object.assign(data, { url });
+    // props.onSave(dataWithUrl, props?.image?.id);
+    console.log(data);
   };
 
-  const onFileUpload = (response) => {
-    console.info(response);
-  };
+  // const onFileUpload = (response) => {
+  //   setUrl(response.filesUploaded[0].url);
+  // };
 
   return (
     <div className="rw-form-wrapper">

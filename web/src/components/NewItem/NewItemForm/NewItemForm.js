@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Form,
   FormError,
@@ -15,12 +16,21 @@ const formatDatetime = (value) => {
 };
 
 const NewItemForm = (props) => {
+  const [url, setUrl] = useState(props?.image?.url);
+
   const onSubmit = (data) => {
-    props.onSave(data, props?.newItem?.id);
+    const dataWithUrl = Object.assign(data, { url });
+    props.onSave(dataWithUrl, props?.image?.id);
   };
 
   const onFileUpload = (response) => {
-    console.info(response);
+    setUrl(response.filesUploaded[0].url);
+  };
+
+  const thumbnail = (url) => {
+    const parts = url.split('/');
+    parts.splice(3, 0, 'resize=width:1000');
+    return parts.join('/');
   };
 
   return (
@@ -67,7 +77,33 @@ const NewItemForm = (props) => {
 
         <FieldError name="description" className="rw-field-error" />
 
-        <PickerInline apikey={process.env.REDWOOD_ENV_FILESTACK_API_KEY} />
+        <PickerInline
+          apikey={process.env.REDWOOD_ENV_FILESTACK_API_KEY}
+          onSuccess={onFileUpload}
+        >
+          <div
+            style={{ display: url ? 'none' : 'block', height: '500px' }}
+          ></div>
+        </PickerInline>
+
+        {url && (
+          <img
+            src={thumbnail(url)}
+            style={{ marginTop: '2rem', maxWidth: '500px' }}
+          />
+        )}
+
+        {url && (
+          <div>
+            <img src={url} style={{ display: 'block', margin: '2rem 0' }} />
+            <button
+              onClick={() => setUrl(null)}
+              className="rw-button rw-button-blue"
+            >
+              Replace Image
+            </button>
+          </div>
+        )}
 
         <FieldError name="imageUrl" className="rw-field-error" />
 
