@@ -71,11 +71,11 @@ model WeCarryText {
   createdAt DateTime @default(now())
 }
 
-model ProductsSectionHeaderImages {
-  id                Int      @id @default(autoincrement())
-  imageUrls         String[]
-  imageDescriptions String[]
-  createdAt         DateTime @default(now())
+model ProductsSectionHeaderImage {
+  id          Int      @id @default(autoincrement())
+  url         String
+  description String
+  createdAt   DateTime @default(now())
 }
 
 model Country {
