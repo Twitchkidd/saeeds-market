@@ -18,8 +18,9 @@ import ProductsLayout from 'src/layouts/ProductsLayout';
 import CountriesLayout from 'src/layouts/CountriesLayout';
 import NewItemsLayout from 'src/layouts/NewItemsLayout';
 import WhatsNewTextsLayout from 'src/layouts/WhatsNewTextsLayout';
+import InternationalSectionHeaderTextsLayout from 'src/layouts/InternationalSectionHeaderTextsLayout';
+import WithFromTextsLayout from 'src/layouts/WithFromTextsLayout';
 import ProductsSectionHeadersLayout from 'src/layouts/ProductsSectionHeadersLayout';
-import InternationalSectionHeadersLayout from 'src/layouts/InternationalSectionHeadersLayout';
 import BusinessInfosLayout from 'src/layouts/BusinessInfosLayout';
 
 const Routes = () => {
@@ -83,11 +84,17 @@ const Routes = () => {
           <Route path="/admin/products/{id:Int}" page={ProductProductPage} name="product" />
           <Route path="/admin/products" page={ProductProductsPage} name="products" />
         </Set>
-        <Set wrap={InternationalSectionHeadersLayout}>
-          <Route path="/admin/international-section-header/new" page={InternationalSectionHeaderNewInternationalSectionHeaderPage} name="newInternationalSectionHeader" />
-          <Route path="/admin/international-section-header/{id:Int}/edit" page={InternationalSectionHeaderEditInternationalSectionHeaderPage} name="editInternationalSectionHeader" />
-          <Route path="/admin/international-section-header/{id:Int}" page={InternationalSectionHeaderInternationalSectionHeaderPage} name="internationalSectionHeader" />
-          <Route path="/admin/international-section-header" page={InternationalSectionHeaderInternationalSectionHeadersPage} name="internationalSectionHeaders" />
+        <Set wrap={InternationalSectionHeaderTextsLayout}>
+          <Route path="/admin/international-section-header-texts/new" page={InternationalSectionHeaderTextNewInternationalSectionHeaderTextPage} name="newInternationalSectionHeaderText" />
+          <Route path="/admin/international-section-header-texts/{id:Int}/edit" page={InternationalSectionHeaderTextEditInternationalSectionHeaderTextPage} name="editInternationalSectionHeaderText" />
+          <Route path="/admin/international-section-header-texts/{id:Int}" page={InternationalSectionHeaderTextInternationalSectionHeaderTextPage} name="internationalSectionHeaderText" />
+          <Route path="/admin/international-section-header-texts" page={InternationalSectionHeaderTextInternationalSectionHeaderTextsPage} name="internationalSectionHeaderTexts" />
+        </Set>
+        <Set wrap={WithFromTextsLayout}>
+          <Route path="/admin/with-from-texts/new" page={WithFromTextNewWithFromTextPage} name="newWithFromText" />
+          <Route path="/admin/with-from-texts/{id:Int}/edit" page={WithFromTextEditWithFromTextPage} name="editWithFromText" />
+          <Route path="/admin/with-from-texts/{id:Int}" page={WithFromTextWithFromTextPage} name="withFromText" />
+          <Route path="/admin/with-from-texts" page={WithFromTextWithFromTextsPage} name="withFromTexts" />
         </Set>
         <Set wrap={ProductsSectionHeadersLayout}>
           <Route path="/admin/products-section-header/new" page={ProductsSectionHeaderNewProductsSectionHeaderPage} name="newProductsSectionHeader" />
