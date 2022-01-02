@@ -8,7 +8,7 @@ generator client {
   binaryTargets = "native"
 }
 
-model TagLine {
+model TagLineText {
   id        Int      @id @default(autoincrement())
   text      String
   createdAt DateTime @default(now())
@@ -47,19 +47,34 @@ model NewItem {
   createdAt   DateTime @default(now())
 }
 
-model InternationalSectionHeader {
+model InternationalSectionHeaderText {
   id        Int      @id @default(autoincrement())
   text      String
-  withFrom  String
   createdAt DateTime @default(now())
 }
 
-model ProductsSectionHeader {
+model WithFromText {
+  id        Int      @id @default(autoincrement())
+  text      String
+  createdAt DateTime @default(now())
+}
+
+model ProductsSectionHeaderText {
+  id        Int      @id @default(autoincrement())
+  text      String
+  createdAt DateTime @default(now())
+}
+
+model WeCarryText {
+  id        Int      @id @default(autoincrement())
+  text      String
+  createdAt DateTime @default(now())
+}
+
+model ProductsSectionHeaderImages {
   id                Int      @id @default(autoincrement())
-  text              String
   imageUrls         String[]
   imageDescriptions String[]
-  weCarry           String
   createdAt         DateTime @default(now())
 }
 

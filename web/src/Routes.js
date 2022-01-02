@@ -8,6 +8,11 @@
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 
 import { Router, Route, Set, Private } from '@redwoodjs/router';
+import MainLayout from 'src/layouts/MainLayout/MainLayout';
+import TagLineTextsLayout from 'src/layouts/TagLineTextsLayout';
+import PrimaryCallToActionTextsLayout from 'src/layouts/PrimaryCallToActionTextsLayout';
+import DeliveryTextsLayout from 'src/layouts/DeliveryTextsLayout';
+import HeroImagesLayout from 'src/layouts/HeroImagesLayout';
 import ProductTypesLayout from 'src/layouts/ProductTypesLayout';
 import ProductsLayout from 'src/layouts/ProductsLayout';
 import CountriesLayout from 'src/layouts/CountriesLayout';
@@ -15,12 +20,7 @@ import NewItemsLayout from 'src/layouts/NewItemsLayout';
 import WhatsNewTextsLayout from 'src/layouts/WhatsNewTextsLayout';
 import ProductsSectionHeadersLayout from 'src/layouts/ProductsSectionHeadersLayout';
 import InternationalSectionHeadersLayout from 'src/layouts/InternationalSectionHeadersLayout';
-import DeliveryTextsLayout from 'src/layouts/DeliveryTextsLayout';
 import BusinessInfosLayout from 'src/layouts/BusinessInfosLayout';
-import PrimaryCallToActionTextsLayout from 'src/layouts/PrimaryCallToActionTextsLayout';
-import HeroImagesLayout from 'src/layouts/HeroImagesLayout';
-import TagLinesLayout from 'src/layouts/TagLinesLayout';
-import MainLayout from 'src/layouts/MainLayout/MainLayout';
 
 const Routes = () => {
   return (
@@ -29,11 +29,11 @@ const Routes = () => {
         <Set wrap={MainLayout}>
           <Route path="/admin" page={AdminPage} name="admin" />
         </Set>
-        <Set wrap={TagLinesLayout}>
-          <Route path="/admin/tag-line/new" page={TagLineNewTagLinePage} name="newTagLine" />
-          <Route path="/admin/tag-line/{id:Int}/edit" page={TagLineEditTagLinePage} name="editTagLine" />
-          <Route path="/admin/tag-line/{id:Int}" page={TagLineTagLinePage} name="tagLine" />
-          <Route path="/admin/tag-line" page={TagLineTagLinesPage} name="tagLines" />
+        <Set wrap={TagLineTextsLayout}>
+          <Route path="/admin/tag-line-texts/new" page={TagLineTextNewTagLineTextPage} name="newTagLineText" />
+          <Route path="/admin/tag-line-texts/{id:Int}/edit" page={TagLineTextEditTagLineTextPage} name="editTagLineText" />
+          <Route path="/admin/tag-line-texts/{id:Int}" page={TagLineTextTagLineTextPage} name="tagLineText" />
+          <Route path="/admin/tag-line-texts" page={TagLineTextTagLineTextsPage} name="tagLineTexts" />
         </Set>
         <Set wrap={PrimaryCallToActionTextsLayout}>
           <Route path="/admin/primary-call-to-action-text/new" page={PrimaryCallToActionTextNewPrimaryCallToActionTextPage} name="newPrimaryCallToActionText" />
