@@ -7,9 +7,9 @@
 // 'src/pages/HomePage/HomePage.js'         -> HomePage
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 
-import { Router, Route, Set, Private } from '@redwoodjs/router'
-import ProductsSectionHeaderImagesLayout from 'src/layouts/ProductsSectionHeaderImagesLayout'
-import WeCarryTextsLayout from 'src/layouts/WeCarryTextsLayout'
+import { Router, Route, Set, Private } from '@redwoodjs/router';
+import ProductsSectionHeaderImagesLayout from 'src/layouts/ProductsSectionHeaderImagesLayout';
+import WeCarryTextsLayout from 'src/layouts/WeCarryTextsLayout';
 import ProductsSectionHeaderTextsLayout from 'src/layouts/ProductsSectionHeaderTextsLayout';
 import MainLayout from 'src/layouts/MainLayout/MainLayout';
 import TagLineTextsLayout from 'src/layouts/TagLineTextsLayout';
@@ -23,30 +23,11 @@ import NewItemsLayout from 'src/layouts/NewItemsLayout';
 import WhatsNewTextsLayout from 'src/layouts/WhatsNewTextsLayout';
 import InternationalSectionHeaderTextsLayout from 'src/layouts/InternationalSectionHeaderTextsLayout';
 import WithFromTextsLayout from 'src/layouts/WithFromTextsLayout';
-import ProductsSectionHeadersLayout from 'src/layouts/ProductsSectionHeadersLayout';
 import BusinessInfosLayout from 'src/layouts/BusinessInfosLayout';
 
 const Routes = () => {
   return (
     <Router>
-      <Set wrap={ProductsSectionHeaderImagesLayout}>
-        <Route path="/products-section-header-images/new" page={ProductsSectionHeaderImageNewProductsSectionHeaderImagePage} name="newProductsSectionHeaderImage" />
-        <Route path="/products-section-header-images/{id:Int}/edit" page={ProductsSectionHeaderImageEditProductsSectionHeaderImagePage} name="editProductsSectionHeaderImage" />
-        <Route path="/products-section-header-images/{id:Int}" page={ProductsSectionHeaderImageProductsSectionHeaderImagePage} name="productsSectionHeaderImage" />
-        <Route path="/products-section-header-images" page={ProductsSectionHeaderImageProductsSectionHeaderImagesPage} name="productsSectionHeaderImages" />
-      </Set>
-      <Set wrap={WeCarryTextsLayout}>
-        <Route path="/we-carry-texts/new" page={WeCarryTextNewWeCarryTextPage} name="newWeCarryText" />
-        <Route path="/we-carry-texts/{id:Int}/edit" page={WeCarryTextEditWeCarryTextPage} name="editWeCarryText" />
-        <Route path="/we-carry-texts/{id:Int}" page={WeCarryTextWeCarryTextPage} name="weCarryText" />
-        <Route path="/we-carry-texts" page={WeCarryTextWeCarryTextsPage} name="weCarryTexts" />
-      </Set>
-      <Set wrap={ProductsSectionHeaderTextsLayout}>
-        <Route path="/products-section-header-texts/new" page={ProductsSectionHeaderTextNewProductsSectionHeaderTextPage} name="newProductsSectionHeaderText" />
-        <Route path="/products-section-header-texts/{id:Int}/edit" page={ProductsSectionHeaderTextEditProductsSectionHeaderTextPage} name="editProductsSectionHeaderText" />
-        <Route path="/products-section-header-texts/{id:Int}" page={ProductsSectionHeaderTextProductsSectionHeaderTextPage} name="productsSectionHeaderText" />
-        <Route path="/products-section-header-texts" page={ProductsSectionHeaderTextProductsSectionHeaderTextsPage} name="productsSectionHeaderTexts" />
-      </Set>
       <Private unauthenticated="landing">
         <Set wrap={MainLayout}>
           <Route path="/admin" page={AdminPage} name="admin" />
@@ -117,11 +98,23 @@ const Routes = () => {
           <Route path="/admin/with-from-texts/{id:Int}" page={WithFromTextWithFromTextPage} name="withFromText" />
           <Route path="/admin/with-from-texts" page={WithFromTextWithFromTextsPage} name="withFromTexts" />
         </Set>
-        <Set wrap={ProductsSectionHeadersLayout}>
-          <Route path="/admin/products-section-header/new" page={ProductsSectionHeaderNewProductsSectionHeaderPage} name="newProductsSectionHeader" />
-          <Route path="/admin/products-section-header/{id:Int}/edit" page={ProductsSectionHeaderEditProductsSectionHeaderPage} name="editProductsSectionHeader" />
-          <Route path="/admin/products-section-header/{id:Int}" page={ProductsSectionHeaderProductsSectionHeaderPage} name="productsSectionHeader" />
-          <Route path="/admin/products-section-header" page={ProductsSectionHeaderProductsSectionHeadersPage} name="productsSectionHeaders" />
+        <Set wrap={ProductsSectionHeaderTextsLayout}>
+          <Route path="/products-section-header-texts/new" page={ProductsSectionHeaderTextNewProductsSectionHeaderTextPage} name="newProductsSectionHeaderText" />
+          <Route path="/products-section-header-texts/{id:Int}/edit" page={ProductsSectionHeaderTextEditProductsSectionHeaderTextPage} name="editProductsSectionHeaderText" />
+          <Route path="/products-section-header-texts/{id:Int}" page={ProductsSectionHeaderTextProductsSectionHeaderTextPage} name="productsSectionHeaderText" />
+          <Route path="/products-section-header-texts" page={ProductsSectionHeaderTextProductsSectionHeaderTextsPage} name="productsSectionHeaderTexts" />
+        </Set>
+        <Set wrap={ProductsSectionHeaderImagesLayout}>
+          <Route path="/products-section-header-images/new" page={ProductsSectionHeaderImageNewProductsSectionHeaderImagePage} name="newProductsSectionHeaderImage" />
+          <Route path="/products-section-header-images/{id:Int}/edit" page={ProductsSectionHeaderImageEditProductsSectionHeaderImagePage} name="editProductsSectionHeaderImage" />
+          <Route path="/products-section-header-images/{id:Int}" page={ProductsSectionHeaderImageProductsSectionHeaderImagePage} name="productsSectionHeaderImage" />
+          <Route path="/products-section-header-images" page={ProductsSectionHeaderImageProductsSectionHeaderImagesPage} name="productsSectionHeaderImages" />
+        </Set>
+        <Set wrap={WeCarryTextsLayout}>
+          <Route path="/we-carry-texts/new" page={WeCarryTextNewWeCarryTextPage} name="newWeCarryText" />
+          <Route path="/we-carry-texts/{id:Int}/edit" page={WeCarryTextEditWeCarryTextPage} name="editWeCarryText" />
+          <Route path="/we-carry-texts/{id:Int}" page={WeCarryTextWeCarryTextPage} name="weCarryText" />
+          <Route path="/we-carry-texts" page={WeCarryTextWeCarryTextsPage} name="weCarryTexts" />
         </Set>
         <Set wrap={BusinessInfosLayout}>
           <Route path="/admin/business-info/new" page={BusinessInfoNewBusinessInfoPage} name="newBusinessInfo" />
