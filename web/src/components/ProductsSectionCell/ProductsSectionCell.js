@@ -1,7 +1,12 @@
 export const QUERY = gql`
-  query FindProductsSectionQuery($id: Int!) {
-    productsSection: productsSection(id: $id) {
-      id
+  query FindProductsSectionProductsQuery {
+    productTypes {
+      name
+      important
+      imageUrl
+      products {
+        name
+      }
     }
   }
 `;

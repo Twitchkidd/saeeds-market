@@ -1,5 +1,3 @@
-import SectionHeader from 'src/components/SectionHeader/SectionHeader';
-
 export const QUERY = gql`
   query FindProductsSectionHeaderTextsQuery {
     productsSectionHeaderTexts {
@@ -8,14 +6,13 @@ export const QUERY = gql`
   }
 `;
 
-export const Loading = () => <SectionHeader>Loading...</SectionHeader>;
+export const Loading = () => 'Specialty Items';
 
-export const Empty = () => <SectionHeader>Empty</SectionHeader>;
+export const Empty = () => <div>Empty</div>;
 
 export const Failure = ({ error }) => (
-  <SectionHeader style={{ color: 'red' }}>Error: {error.message}</SectionHeader>
+  <div style={{ color: 'red' }}>Error: {error.message}</div>
 );
 
-export const Success = ({ productSectionHeaderTexts }) => (
-  <SectionHeader>{productSectionHeaderTexts[0].text}</SectionHeader>
-);
+export const Success = ({ productsSectionHeaderTexts }) =>
+  productsSectionHeaderTexts[0].text;

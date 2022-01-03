@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import Logo from 'src/assets/logo.svg';
 import UserAuthTools from 'src/components/UserAuthTools/UserAuthTools';
-import TagLineCell from 'src/components/TagLineCell/TagLineCell';
+import TagLineTextCell from 'src/components/TagLineTextCell/TagLineTextCell';
 import Button from 'src/components/Button/Button';
 import PrimaryCallToActionTextCell from 'src/components/PrimaryCallToActionTextCell/PrimaryCallToActionTextCell';
 import DisplayText from 'src/components/DisplayText/DisplayText';
@@ -12,9 +12,10 @@ import HeroImageCell from 'src/components/HeroImageCell/HeroImageCell';
 import SectionHeader from 'src/components/SectionHeader/SectionHeader';
 import WhatsNewTextCell from 'src/components/WhatsNewTextCell/WhatsNewTextCell';
 import WhatsNewCell from 'src/components/WhatsNewCell/WhatsNewCell';
-import InternationalSectionHeaderCell from 'src/components/InternationalSectionHeaderCell/InternationalSectionHeaderCell';
+import InternationalSectionHeaderTextCell from 'src/components/InternationalSectionHeaderTextCell/InternationalSectionHeaderTextCell';
 import InternationalSectionCell from 'src/components/InternationalSectionCell/InternationalSectionCell';
-import ProductsSectionHeaderCell from 'src/components/ProductsSectionHeaderCell/ProductsSectionHeaderCell';
+import ProductsSectionHeaderTextCell from 'src/components/ProductsSectionHeaderTextCell/ProductsSectionHeaderTextCell';
+import ProductsSectionHeaderImageCell from 'src/components/ProductsSectionHeaderImageCell/ProductsSectionHeaderImageCell';
 import ProductsSectionCell from 'src/components/ProductsSectionCell/ProductsSectionCell';
 import { verticalKeyline2, verticalSpace1 } from 'src/utils/spacing';
 
@@ -28,7 +29,12 @@ const MainWrapper = styled.main`
   }
 `;
 
-const SectionWrapper = styled.section``;
+const SectionWrapper = styled.section`
+  font-family: 'Birthstone Bounce', cursive;
+  /* font-family: 'Sacramento', cursive; */
+
+  ${(props) => (props.left ? `text-align: left;` : null)}
+`;
 
 const Main = () => {
   const [taps, setTaps] = useState(0);
@@ -48,7 +54,7 @@ const Main = () => {
       ) : (
         <UserAuthTools />
       )}
-      <TagLineCell />
+      <TagLineTextCell />
       <Button big>
         <PrimaryCallToActionTextCell />
       </Button>
@@ -58,17 +64,22 @@ const Main = () => {
       <DeliveryButtons />
       <HeroImageCell />
       <SectionWrapper>
-        <SectionHeader>
+        <SectionHeader left>
           <WhatsNewTextCell />
         </SectionHeader>
         <WhatsNewCell />
       </SectionWrapper>
       <SectionWrapper>
-        <InternationalSectionHeaderCell />
+        <SectionHeader>
+          <InternationalSectionHeaderTextCell />
+        </SectionHeader>
         <InternationalSectionCell />
       </SectionWrapper>
       <SectionWrapper>
-        <ProductsSectionHeaderCell />
+        <SectionHeader>
+          <ProductsSectionHeaderTextCell />
+          <ProductsSectionHeaderImageCell />
+        </SectionHeader>
         <ProductsSectionCell />
       </SectionWrapper>
     </MainWrapper>

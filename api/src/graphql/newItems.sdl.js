@@ -8,8 +8,8 @@ export const schema = gql`
   }
 
   type Query {
-    newItems: [NewItem!]! @requireAuth
-    newItem(id: Int!): NewItem @requireAuth
+    newItems: [NewItem!]! @skipAuth
+    newItem(id: Int!): NewItem @skipAuth
   }
 
   input CreateNewItemInput {

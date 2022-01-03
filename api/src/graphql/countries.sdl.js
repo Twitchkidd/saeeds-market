@@ -10,8 +10,8 @@ export const schema = gql`
   }
 
   type Query {
-    countries: [Country!]! @requireAuth
-    country(id: Int!): Country @requireAuth
+    countries: [Country!]! @skipAuth
+    country(id: Int!): Country @skipAuth
   }
 
   input CreateCountryInput {

@@ -14,7 +14,7 @@ const DELETE_NEW_ITEM_MUTATION = gql`
 
 const MAX_STRING_LENGTH = 150;
 
-const truncate = text => {
+const truncate = (text) => {
   let output = text;
   if (text && text.length > MAX_STRING_LENGTH) {
     output = output.substring(0, MAX_STRING_LENGTH) + '...';
@@ -22,11 +22,11 @@ const truncate = text => {
   return output;
 };
 
-const jsonTruncate = obj => {
+const jsonTruncate = (obj) => {
   return truncate(JSON.stringify(obj, null, 2));
 };
 
-const timeTag = datetime => {
+const timeTag = (datetime) => {
   return (
     <time dateTime={datetime} title={datetime}>
       {new Date(datetime).toUTCString()}
@@ -34,8 +34,14 @@ const timeTag = datetime => {
   );
 };
 
-const checkboxInputTag = checked => {
+const checkboxInputTag = (checked) => {
   return <input type="checkbox" checked={checked} disabled />;
+};
+
+const thumbnail = (url) => {
+  const parts = url.split('/');
+  parts.splice(3, 0, 'resize=width:100');
+  return parts.join('/');
 };
 
 const NewItemsList = ({ newItems }) => {
@@ -43,7 +49,7 @@ const NewItemsList = ({ newItems }) => {
     onCompleted: () => {
       toast.success('NewItem deleted');
     },
-    onError: error => {
+    onError: (error) => {
       toast.error(error.message);
     },
     // This refetches the query on the list page. Read more about other ways to
@@ -53,7 +59,7 @@ const NewItemsList = ({ newItems }) => {
     awaitRefetchQueries: true,
   });
 
-  const onDeleteClick = id => {
+  const onDeleteClick = (id) => {
     if (confirm('Are you sure you want to delete newItem ' + id + '?')) {
       deleteNewItem({ variables: { id } });
     }
@@ -73,12 +79,19 @@ const NewItemsList = ({ newItems }) => {
           </tr>
         </thead>
         <tbody>
-          {newItems.map(newItem => (
+          {newItems.map((newItem) => (
             <tr key={newItem.id}>
               <td>{truncate(newItem.id)}</td>
               <td>{truncate(newItem.title)}</td>
               <td>{truncate(newItem.description)}</td>
-              <td>{truncate(newItem.imageUrl)}</td>
+              <td>
+                <a href={newItem.imageUrl} target="_blank">
+                  <img
+                    src={thumbnail(newItem.imageUrl)}
+                    style={{ maxWidth: '50px' }}
+                  />
+                </a>
+              </td>
               <td>{timeTag(newItem.createdAt)}</td>
               <td>
                 <nav className="rw-table-actions">

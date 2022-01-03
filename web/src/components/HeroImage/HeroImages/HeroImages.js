@@ -59,6 +59,12 @@ const HeroImagesList = ({ heroImages }) => {
     }
   };
 
+  const thumbnail = (url) => {
+    const parts = url.split('/');
+    parts.splice(3, 0, 'resize=width:100');
+    return parts.join('/');
+  };
+
   return (
     <div className="rw-segment rw-table-wrapper-responsive">
       <table className="rw-table">
@@ -75,7 +81,14 @@ const HeroImagesList = ({ heroImages }) => {
             <tr key={heroImage.id}>
               <td>{truncate(heroImage.id)}</td>
               <td>{truncate(heroImage.title)}</td>
-              <td>{truncate(heroImage.url)}</td>
+              <td>
+                <a href={image.url} target="_blank">
+                  <img
+                    src={thumbnail(image.url)}
+                    style={{ maxWidth: '50px' }}
+                  />
+                </a>
+              </td>
               <td>
                 <nav className="rw-table-actions">
                   <Link

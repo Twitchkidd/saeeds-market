@@ -16,6 +16,12 @@ export const Failure = ({ error }) => (
   <div style={{ color: 'red' }}>Error: {error.message}</div>
 );
 
-export const Success = ({ whatsNew }) => {
-  return <div>{JSON.stringify(whatsNew)}</div>;
+export const Success = ({ newItems }) => {
+  return newItems.map((item, i) => (
+    <>
+      <h3>{item.title}</h3>
+      <p>{item.description}</p>
+      <img src={item.imageUrl} alt={item.title} style={{ width: '100%' }} />
+    </>
+  ));
 };

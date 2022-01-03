@@ -10,7 +10,7 @@ const DELETE_PRODUCTS_SECTION_HEADER_IMAGE_MUTATION = gql`
   }
 `;
 
-const jsonDisplay = obj => {
+const jsonDisplay = (obj) => {
   return (
     <pre>
       <code>{JSON.stringify(obj, null, 2)}</code>
@@ -18,7 +18,7 @@ const jsonDisplay = obj => {
   );
 };
 
-const timeTag = datetime => {
+const timeTag = (datetime) => {
   return (
     <time dateTime={datetime} title={datetime}>
       {new Date(datetime).toUTCString()}
@@ -26,7 +26,7 @@ const timeTag = datetime => {
   );
 };
 
-const checkboxInputTag = checked => {
+const checkboxInputTag = (checked) => {
   return <input type="checkbox" checked={checked} disabled />;
 };
 
@@ -38,13 +38,13 @@ const ProductsSectionHeaderImage = ({ productsSectionHeaderImage }) => {
         toast.success('ProductsSectionHeaderImage deleted');
         navigate(routes.productsSectionHeaderImages());
       },
-      onError: error => {
+      onError: (error) => {
         toast.error(error.message);
       },
     }
   );
 
-  const onDeleteClick = id => {
+  const onDeleteClick = (id) => {
     if (
       confirm(
         'Are you sure you want to delete productsSectionHeaderImage ' + id + '?'
@@ -52,6 +52,12 @@ const ProductsSectionHeaderImage = ({ productsSectionHeaderImage }) => {
     ) {
       deleteProductsSectionHeaderImage({ variables: { id } });
     }
+  };
+
+  const thumbnail = (url) => {
+    const parts = url.split('/');
+    parts.splice(3, 0, 'resize=width:100');
+    return parts.join('/');
   };
 
   return (
@@ -69,8 +75,14 @@ const ProductsSectionHeaderImage = ({ productsSectionHeaderImage }) => {
               <td>{productsSectionHeaderImage.id}</td>
             </tr>
             <tr>
-              <th>Url</th>
-              <td>{productsSectionHeaderImage.url}</td>
+              <td>
+                <a href={productsSectionHeaderImage.url} target="_blank">
+                  <img
+                    src={thumbnail(productsSectionHeaderImage.url)}
+                    style={{ maxWidth: '50px' }}
+                  />
+                </a>
+              </td>
             </tr>
             <tr>
               <th>Description</th>

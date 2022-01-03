@@ -16,12 +16,12 @@ export const QUERY = gql`
   }
 `;
 
-export const Loading = () => <h2>Loading...</h2>;
+export const Loading = () => <TagLine>Loading...</TagLine>;
 
-export const Empty = () => <h2>Empty</h2>;
+export const Empty = () => <TagLine>Empty</TagLine>;
 
 export const Failure = ({ error }) => (
-  <h2 style={{ color: 'red' }}>Error: {error.message}</h2>
+  <TagLine style={{ color: 'red' }}>Error: {error.message}</TagLine>
 );
 
 export const Success = ({ tagLineTexts }) => {

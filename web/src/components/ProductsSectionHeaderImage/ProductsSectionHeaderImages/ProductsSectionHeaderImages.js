@@ -14,7 +14,7 @@ const DELETE_PRODUCTS_SECTION_HEADER_IMAGE_MUTATION = gql`
 
 const MAX_STRING_LENGTH = 150;
 
-const truncate = text => {
+const truncate = (text) => {
   let output = text;
   if (text && text.length > MAX_STRING_LENGTH) {
     output = output.substring(0, MAX_STRING_LENGTH) + '...';
@@ -22,11 +22,11 @@ const truncate = text => {
   return output;
 };
 
-const jsonTruncate = obj => {
+const jsonTruncate = (obj) => {
   return truncate(JSON.stringify(obj, null, 2));
 };
 
-const timeTag = datetime => {
+const timeTag = (datetime) => {
   return (
     <time dateTime={datetime} title={datetime}>
       {new Date(datetime).toUTCString()}
@@ -34,8 +34,14 @@ const timeTag = datetime => {
   );
 };
 
-const checkboxInputTag = checked => {
+const checkboxInputTag = (checked) => {
   return <input type="checkbox" checked={checked} disabled />;
+};
+
+const thumbnail = (url) => {
+  const parts = url.split('/');
+  parts.splice(3, 0, 'resize=width:100');
+  return parts.join('/');
 };
 
 const ProductsSectionHeaderImagesList = ({ productsSectionHeaderImages }) => {
@@ -45,7 +51,7 @@ const ProductsSectionHeaderImagesList = ({ productsSectionHeaderImages }) => {
       onCompleted: () => {
         toast.success('ProductsSectionHeaderImage deleted');
       },
-      onError: error => {
+      onError: (error) => {
         toast.error(error.message);
       },
       // This refetches the query on the list page. Read more about other ways to
@@ -56,7 +62,7 @@ const ProductsSectionHeaderImagesList = ({ productsSectionHeaderImages }) => {
     }
   );
 
-  const onDeleteClick = id => {
+  const onDeleteClick = (id) => {
     if (
       confirm(
         'Are you sure you want to delete productsSectionHeaderImage ' + id + '?'
@@ -79,10 +85,17 @@ const ProductsSectionHeaderImagesList = ({ productsSectionHeaderImages }) => {
           </tr>
         </thead>
         <tbody>
-          {productsSectionHeaderImages.map(productsSectionHeaderImage => (
+          {productsSectionHeaderImages.map((productsSectionHeaderImage) => (
             <tr key={productsSectionHeaderImage.id}>
               <td>{truncate(productsSectionHeaderImage.id)}</td>
-              <td>{truncate(productsSectionHeaderImage.url)}</td>
+              <td>
+                <a href={productsSectionHeaderImage.url} target="_blank">
+                  <img
+                    src={thumbnail(productsSectionHeaderImage.url)}
+                    style={{ maxWidth: '50px' }}
+                  />
+                </a>
+              </td>
               <td>{truncate(productsSectionHeaderImage.description)}</td>
               <td>{timeTag(productsSectionHeaderImage.createdAt)}</td>
               <td>

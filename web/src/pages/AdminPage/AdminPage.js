@@ -13,7 +13,7 @@ const AdminPage = () => {
       />
 
       <h1>Admin Page</h1>
-      <Link to={routes.tagLines()}>Tag Line</Link>
+      <Link to={routes.tagLineTexts()}>Tag Line</Link>
       <Link to={routes.primaryCallToActionTexts()}>Call To Action Button</Link>
       <Link to={routes.heroImages()}>Hero Image</Link>
       <Link to={routes.deliveryTexts()}>Delivery Text</Link>
@@ -22,10 +22,17 @@ const AdminPage = () => {
       <Link to={routes.countries()}>Countries</Link>
       <Link to={routes.productTypes()}>Product Types</Link>
       <Link to={routes.products()}>Products</Link>
-      <Link to={routes.internationalSectionHeaders()}>
+      <Link to={routes.internationalSectionHeaderTexts()}>
         International Section Header
       </Link>
-      <Link to={routes.productsSectionHeaders()}>Products Section Header</Link>
+      <Link to={routes.withFromTexts()}>With From Text</Link>
+      <Link to={routes.productsSectionHeaderTexts()}>
+        Products Section Header
+      </Link>
+      <Link to={routes.productsSectionHeaderImages()}>
+        Products Section Images
+      </Link>
+      <Link to={routes.weCarryTexts()}>We Carry Text</Link>
       <Link to={routes.businessInfos()}>Business Info</Link>
       <UserAuthTools />
     </>

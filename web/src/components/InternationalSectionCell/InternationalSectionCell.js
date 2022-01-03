@@ -1,7 +1,13 @@
 export const QUERY = gql`
-  query FindInternationalSectionQuery($id: Int!) {
-    internationalSection: internationalSection(id: $id) {
-      id
+  query FindInternationalSectionProductsQuery {
+    countries {
+      name
+      abbr
+      flagUrl
+      imageUrl
+      products {
+        name
+      }
     }
   }
 `;

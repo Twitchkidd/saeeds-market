@@ -76,12 +76,14 @@ const NewItem = ({ newItem }) => {
               <td>{newItem.description}</td>
             </tr>
             <tr>
-              <a href={newItem.url} target="_blank">
-                <img
-                  src={thumbnail(newItem.url)}
-                  style={{ maxWidth: '50px' }}
-                />
-              </a>
+              <td>
+                <a href={newItem.imageUrl} target="_blank">
+                  <img
+                    src={thumbnail(newItem.imageUrl)}
+                    style={{ maxWidth: '50px' }}
+                  />
+                </a>
+              </td>
             </tr>
             <tr>
               <th>Created at</th>
