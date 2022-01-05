@@ -19,6 +19,6 @@ export const Failure = ({ error }) => (
   <div style={{ color: 'red' }}>Error: {error.message}</div>
 );
 
-export const Success = ({ productsSection }) => {
-  return <div>{JSON.stringify(productsSection)}</div>;
+export const Success = ({ productTypes }) => {
+  return <div>{JSON.stringify(productTypes)}</div>;
 };

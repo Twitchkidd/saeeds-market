@@ -19,7 +19,7 @@ const formatDatetime = (value) => {
 const ProductTypeForm = (props) => {
   const [url, setUrl] = useState(props?.image?.url);
   const onSubmit = (data) => {
-    const dataWithUrl = Object.assign(data, { url });
+    const dataWithUrl = Object.assign(data, { imageUrl: url });
     props.onSave(dataWithUrl, props?.image?.id);
   };
 
@@ -86,15 +86,11 @@ const ProductTypeForm = (props) => {
         </PickerInline>
 
         {url && (
-          <img
-            src={thumbnail(url)}
-            style={{ marginTop: '2rem', maxWidth: '500px' }}
-          />
-        )}
-
-        {url && (
           <div>
-            <img src={url} style={{ display: 'block', margin: '2rem 0' }} />
+            <img
+              src={thumbnail(url)}
+              style={{ display: 'block', margin: '2rem 0' }}
+            />
             <button
               onClick={() => setUrl(null)}
               className="rw-button rw-button-blue"
