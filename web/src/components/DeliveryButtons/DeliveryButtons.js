@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import UberEats from 'src/assets/uberEats.svg';
-import DoorDash from 'src/Icons/DoorDash';
-import grubHub from '../../../assets/grubHub.png';
+import UberEats from 'src/assets/svg/uberEats.svg';
+import DoorDash from 'src/Icons/DoorDash'; // !!
+import grubHub from 'src/assets/images/grubHub.png';
 
 const ButtonsWrapper = styled.div`
   width: 100%;
