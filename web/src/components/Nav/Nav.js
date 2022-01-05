@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import ResponsiveMenu from 'react-responsive-navbar';
-import NavOpen from 'src/Icons/NavOpen';
-import NavClose from 'src/Icons/NavClose';
+import OpenNavIcon from 'src/assets/svg/openNavIcon.svg';
+import CloseNavIcon from 'src/assets/svg/closeNavIcon.svg';
 
 const Wrapper = styled.nav`
   margin: 0;
@@ -27,9 +27,9 @@ const NavText = styled.span`
 const Button = ({ which }) => (
   <ButtonWrapper>
     {which === 'open' ? (
-      <NavOpen />
+      <OpenNavIcon style={{ width: '14px', height: '14px' }} />
     ) : (
-      <NavClose style={{ marginRight: '3px' }} />
+      <CloseNavIcon style={{ width: '14px', height: '14px' }} />
     )}
     <NavText>MENU</NavText>
   </ButtonWrapper>

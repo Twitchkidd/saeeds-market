@@ -1,20 +1,26 @@
 import styled from 'styled-components';
-import UberEats from 'src/assets/svg/uberEats.svg';
-import DoorDash from 'src/Icons/DoorDash'; // !!
+import DoorDash from 'src/assets/svg/doorDash.svg';
 import grubHub from 'src/assets/images/grubHub.png';
+import UberEats from 'src/assets/svg/uberEats.svg';
 
 const ButtonsWrapper = styled.div`
-  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+
+  width: 100%;
+`;
+
+const GrubHub = styled.img`
+  width: 90px;
+  height: auto;
 `;
 
 const DeliveryButtons = () => (
   <ButtonsWrapper>
     <DoorDash />
-    <img src={grubHub} alt="Order from GrubHub" width="90px" height="auto" />
+    <GrubHub src={grubHub} alt="Order from GrubHub" />
     <UberEats style={{ width: '90px', height: 'auto' }} />
   </ButtonsWrapper>
 );

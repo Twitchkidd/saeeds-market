@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import Logo from 'src/assets/logo.svg';
+import Logo from 'src/assets/svg/logo.svg';
 import UserAuthTools from 'src/components/UserAuthTools/UserAuthTools';
 import TagLineTextCell from 'src/components/TagLineTextCell/TagLineTextCell';
 import Button from 'src/components/Button/Button';
