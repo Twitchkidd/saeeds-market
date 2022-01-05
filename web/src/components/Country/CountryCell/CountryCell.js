@@ -6,8 +6,6 @@ export const QUERY = gql`
       id
       name
       abbr
-      flagUrl
-      imageUrl
       createdAt
     }
   }

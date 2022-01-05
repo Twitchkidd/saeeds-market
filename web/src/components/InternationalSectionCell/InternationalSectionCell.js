@@ -3,8 +3,6 @@ export const QUERY = gql`
     countries {
       name
       abbr
-      flagUrl
-      imageUrl
       products {
         name
       }
@@ -20,6 +18,6 @@ export const Failure = ({ error }) => (
   <div style={{ color: 'red' }}>Error: {error.message}</div>
 );
 
-export const Success = ({ internationalSection }) => {
-  return <div>{JSON.stringify(internationalSection)}</div>;
+export const Success = ({ countries }) => {
+  return <div>{JSON.stringify(countries)}</div>;
 };

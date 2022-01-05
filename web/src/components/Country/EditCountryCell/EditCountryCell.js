@@ -10,8 +10,6 @@ export const QUERY = gql`
       id
       name
       abbr
-      flagUrl
-      imageUrl
       createdAt
     }
   }
@@ -22,8 +20,6 @@ const UPDATE_COUNTRY_MUTATION = gql`
       id
       name
       abbr
-      flagUrl
-      imageUrl
       createdAt
     }
   }
@@ -43,7 +39,7 @@ export const Success = ({ country }) => {
         toast.success('Country updated');
         navigate(routes.countries());
       },
-      onError: error => {
+      onError: (error) => {
         toast.error(error.message);
       },
     }

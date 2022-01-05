@@ -1,4 +1,4 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import {
   Form,
   FormError,
@@ -7,7 +7,7 @@ import {
   TextField,
   Submit,
 } from '@redwoodjs/forms';
-import { PickerInline } from 'filestack-react';
+// import { PickerInline } from 'filestack-react';
 
 const formatDatetime = (value) => {
   if (value) {
@@ -16,22 +16,22 @@ const formatDatetime = (value) => {
 };
 
 const CountryForm = (props) => {
-  const [url, setUrl] = useState(props?.image?.url);
+  // const [url, setUrl] = useState(props?.image?.url);
 
   const onSubmit = (data) => {
-    const dataWithUrl = Object.assign(data, { url });
-    props.onSave(dataWithUrl, props?.image?.id);
+    // const dataWithUrl = Object.assign(data, { url });
+    props.onSave(data, props?.image?.id);
   };
 
-  const onFileUpload = (response) => {
-    setUrl(response.filesUploaded[0].url);
-  };
+  // const onFileUpload = (response) => {
+  //   setUrl(response.filesUploaded[0].url);
+  // };
 
-  const thumbnail = (url) => {
-    const parts = url.split('/');
-    parts.splice(3, 0, 'resize=width:1000');
-    return parts.join('/');
-  };
+  // const thumbnail = (url) => {
+  //   const parts = url.split('/');
+  //   parts.splice(3, 0, 'resize=width:1000');
+  //   return parts.join('/');
+  // };
 
   return (
     <div className="rw-form-wrapper">
@@ -77,7 +77,7 @@ const CountryForm = (props) => {
 
         <FieldError name="abbr" className="rw-field-error" />
 
-        <PickerInline
+        {/* <PickerInline
           apikey={process.env.REDWOOD_ENV_FILESTACK_API_KEY}
           onSuccess={onFileUpload}
         >
@@ -108,7 +108,7 @@ const CountryForm = (props) => {
           validation={{ required: true }}
         />
 
-        <FieldError name="imageUrl" className="rw-field-error" />
+        <FieldError name="imageUrl" className="rw-field-error" /> */}
 
         <div className="rw-button-group">
           <Submit disabled={props.loading} className="rw-button rw-button-blue">

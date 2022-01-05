@@ -47,12 +47,6 @@ const Country = ({ country }) => {
     }
   };
 
-  const thumbnail = (url) => {
-    const parts = url.split('/');
-    parts.splice(3, 0, 'resize=width:100');
-    return parts.join('/');
-  };
-
   return (
     <>
       <div className="rw-segment">
@@ -74,18 +68,6 @@ const Country = ({ country }) => {
             <tr>
               <th>Abbr</th>
               <td>{country.abbr}</td>
-            </tr>
-            <tr>
-              <th>Flag url</th>
-              <td>{country.flagUrl}</td>
-            </tr>
-            <tr>
-              <a href={country.url} target="_blank">
-                <img
-                  src={thumbnail(country.url)}
-                  style={{ maxWidth: '50px' }}
-                />
-              </a>
             </tr>
             <tr>
               <th>Created at</th>

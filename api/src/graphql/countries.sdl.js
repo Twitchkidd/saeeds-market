@@ -3,8 +3,6 @@ export const schema = gql`
     id: Int!
     name: String!
     abbr: String!
-    flagUrl: String!
-    imageUrl: String!
     products: [Product]!
     createdAt: DateTime!
   }
@@ -17,15 +15,11 @@ export const schema = gql`
   input CreateCountryInput {
     name: String!
     abbr: String!
-    flagUrl: String!
-    imageUrl: String!
   }
 
   input UpdateCountryInput {
     name: String
     abbr: String
-    flagUrl: String
-    imageUrl: String
   }
 
   type Mutation {

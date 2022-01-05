@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import BusinessInfoCell from 'src/components/BusinessInfoCell/BusinessInfoCell';
 import MadeWithLove from 'src/components/MadeWithLove/MadeWithLove';
 import { verticalSpace1 } from 'src/utils/spacing';
-import { saeedsBlue, saeedsWhite } from 'src/utils/colors';
+import { blue400, saeedsWhite } from 'src/utils/colors';
 
 const FooterWrapper = styled.footer`
   display: grid;
@@ -15,7 +15,7 @@ const FooterWrapper = styled.footer`
   width: calc(100% + 8.2vw);
   padding-top: ${verticalSpace1};
   padding-bottom: ${verticalSpace1};
-  background: ${saeedsBlue};
+  background: ${blue400};
 
   color: ${saeedsWhite};
 
