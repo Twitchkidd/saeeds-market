@@ -1,3 +1,5 @@
+import SectionHeader from 'src/components/SectionHeader/SectionHeader';
+import InternationalSectionHeaderTextCell from 'src/components/InternationalSectionHeaderTextCell/InternationalSectionHeaderTextCell';
 import GR from 'src/assets/svg/gr.svg';
 import LB from 'src/assets/svg/lb.svg';
 import IT from 'src/assets/svg/it.svg';
@@ -34,13 +36,10 @@ const Flag = ({ abbr }) => {
 };
 
 export const QUERY = gql`
-  query FindInternationalSectionProductsQuery {
+  query FindCountriesQuery {
     countries {
       name
       abbr
-      products {
-        name
-      }
     }
   }
 `;
@@ -53,20 +52,16 @@ export const Failure = ({ error }) => (
   <div style={{ color: 'red' }}>Error: {error.message}</div>
 );
 
-export const Success = ({ countries, selected }) => {
-  console.log(selected);
-  // so here we're going to want selected.map
+export const Success = ({ countries, onUpdate }) => {
+  const setNextSelected = (input) => {
+    // if input was all, return all
+    // if input was already input and selected !== 1 (can't unselect last country) return selected minus input
+    // if input was not already selected, return selected plus input
+  };
   return (
-    <>
-      {countries.map((c, i) => (
-        <section key={i}>
-          <Flag abbr={c.abbr} />
-          <h4>{c.name}</h4>
-          {c.products.map((p, j) => (
-            <p key={j}>{p.name}</p>
-          ))}
-        </section>
-      ))}
-    </>
+    <SectionHeader>
+      <InternationalSectionHeaderTextCell />
+      <CountrySelector></CountrySelector>
+    </SectionHeader>
   );
 };

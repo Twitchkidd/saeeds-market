@@ -12,7 +12,7 @@ import HeroImageCell from 'src/components/HeroImageCell/HeroImageCell';
 import SectionHeader from 'src/components/SectionHeader/SectionHeader';
 import WhatsNewTextCell from 'src/components/WhatsNewTextCell/WhatsNewTextCell';
 import WhatsNewCell from 'src/components/WhatsNewCell/WhatsNewCell';
-import InternationalSectionHeaderTextCell from 'src/components/InternationalSectionHeaderTextCell/InternationalSectionHeaderTextCell';
+import WithFromTextCell from 'src/components/WithFromTextCell/WithFromTextCell';
 import InternationalSectionCell from 'src/components/InternationalSectionCell/InternationalSectionCell';
 import ProductsSectionHeaderTextCell from 'src/components/ProductsSectionHeaderTextCell/ProductsSectionHeaderTextCell';
 import ProductsSectionHeaderImageCell from 'src/components/ProductsSectionHeaderImageCell/ProductsSectionHeaderImageCell';
@@ -38,8 +38,12 @@ const SectionWrapper = styled.section`
 
 const Main = () => {
   const [taps, setTaps] = useState(0);
+  const [selected, setSelected] = useState('all');
   const handleClick = () => {
     setTaps((prevTaps) => ++prevTaps);
+  };
+  const handleCountrySelect = (selection) => {
+    setSelected(selection);
   };
   return (
     <MainWrapper>
@@ -70,10 +74,9 @@ const Main = () => {
         <WhatsNewCell />
       </SectionWrapper>
       <SectionWrapper>
-        <SectionHeader>
-          <InternationalSectionHeaderTextCell />
-        </SectionHeader>
-        <InternationalSectionCell />
+        <InternationalSectionHeaderCell onUpdate={handleCountrySelect} />
+        <WithFromTextCell />
+        <InternationalSectionCell selected={selected} />
       </SectionWrapper>
       <SectionWrapper>
         <SectionHeader>
