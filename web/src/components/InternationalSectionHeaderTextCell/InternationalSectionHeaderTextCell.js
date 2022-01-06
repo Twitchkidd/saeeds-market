@@ -6,12 +6,12 @@ export const QUERY = gql`
   }
 `;
 
-export const Loading = () => 'International Specialties';
+export const Loading = () => 'Loading';
 
-export const Empty = () => <div>Empty</div>;
+export const Empty = () => 'Empty';
 
 export const Failure = ({ error }) => (
-  <div style={{ color: 'red' }}>Error: {error.message}</div>
+  <span style={{ color: 'red' }}>Error: {error.message}</span>
 );
 
 export const Success = ({ internationalSectionHeaderTexts }) =>
