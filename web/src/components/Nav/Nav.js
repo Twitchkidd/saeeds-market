@@ -1,3 +1,4 @@
+import { Link, routes } from '@redwoodjs/router';
 import styled from 'styled-components';
 import ResponsiveMenu from 'react-responsive-navbar';
 import OpenNavIcon from 'src/assets/svg/openNavIcon.svg';
@@ -19,11 +20,6 @@ const ButtonWrapper = styled.div`
   gap: 7px;
 `;
 
-const NavText = styled.span`
-  font-size: 20px;
-  color: #3952a2;
-`;
-
 const Button = ({ which }) => (
   <ButtonWrapper>
     {which === 'open' ? (
@@ -35,6 +31,24 @@ const Button = ({ which }) => (
   </ButtonWrapper>
 );
 
+const NavText = styled.span`
+  font-size: 20px;
+  color: #3952a2;
+`;
+
+const MenuList = styled.ul`
+  width: 100%;
+  list-style-type: armenian;
+`;
+
+const MenuAnchor = styled.a`
+  display: block;
+`;
+
+const MenuLink = styled(Link)`
+  display: block;
+`;
+
 const Nav = () => (
   <Wrapper>
     <ResponsiveMenu
@@ -44,12 +58,23 @@ const Nav = () => (
       largeMenuClassName="large-menu-classname"
       smallMenuClassName="small-menu-classname"
       menu={
-        <ul>
-          <li>Item 1</li>
-          <li>Item 2</li>
-          <li>Item 3</li>
-          <li>Item 4</li>
-        </ul>
+        <MenuList>
+          <li>
+            <MenuAnchor href="#">Lunch Menu</MenuAnchor>
+          </li>
+          <li>
+            <MenuAnchor href="#">Catering Menu</MenuAnchor>
+          </li>
+          <li>
+            <MenuLink to={routes.about()}>About</MenuLink>
+          </li>
+          <li>
+            <MenuLink to={routes.contact()}>Contact</MenuLink>
+          </li>
+          <li>
+            <MenuLink to={routes.faq()}>FAQ</MenuLink>
+          </li>
+        </MenuList>
       }
     />
   </Wrapper>
