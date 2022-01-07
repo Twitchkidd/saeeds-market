@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import localHero from '../../../../../assets-saeeds/photos/Hero.jpg';
+// import localHero from '../../../../../assets-saeeds/photos/Hero.jpg';
 
 const thumbnail = (url) => {
   const parts = url.split('/');
@@ -32,6 +32,8 @@ export const Failure = ({ error }) => (
 );
 
 export const Success = ({ heroImages }) => {
-  // return <HeroImage src={thumbnail(heroImages[0].url)} alt="Delicious Greek food" />; // Todo: desc
-  return <HeroImage src={localHero} alt="Delicious Greek food" />;
+  return (
+    <HeroImage src={thumbnail(heroImages[0].url)} alt="Delicious Greek food" />
+  ); // Todo: desc
+  // return <HeroImage src={localHero} alt="Delicious Greek food" />;
 };
