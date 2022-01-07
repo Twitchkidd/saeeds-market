@@ -16,11 +16,11 @@ const formatDatetime = (value) => {
 };
 
 const NewItemForm = (props) => {
-  const [url, setUrl] = useState(props?.image?.url);
+  const [url, setUrl] = useState(props?.newItem?.url);
 
   const onSubmit = (data) => {
     const dataWithUrl = Object.assign(data, { imageUrl: url });
-    props.onSave(dataWithUrl, props?.image?.id);
+    props.onSave(dataWithUrl, props?.newItem?.id);
   };
 
   const onFileUpload = (response) => {

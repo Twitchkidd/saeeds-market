@@ -16,10 +16,10 @@ const formatDatetime = (value) => {
 };
 
 const ProductsSectionHeaderImageForm = (props) => {
-  const [url, setUrl] = useState(props?.image?.url);
+  const [url, setUrl] = useState(props?.productsSectionHeaderImage?.url);
   const onSubmit = (data) => {
     const dataWithUrl = Object.assign(data, { url });
-    props.onSave(dataWithUrl, props?.image?.id);
+    props.onSave(dataWithUrl, props?.productsSectionHeaderImage?.id);
   };
 
   const onFileUpload = (response) => {
