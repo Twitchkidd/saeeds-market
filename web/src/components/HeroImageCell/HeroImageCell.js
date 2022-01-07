@@ -1,6 +1,12 @@
 import styled from 'styled-components';
 import localHero from '../../../../../assets-saeeds/photos/Hero.jpg';
 
+const thumbnail = (url) => {
+  const parts = url.split('/');
+  parts.splice(3, 0, 'resize=width:640');
+  return parts.join('/');
+};
+
 const HeroImage = styled.img`
   width: 100%;
 `;
@@ -26,6 +32,6 @@ export const Failure = ({ error }) => (
 );
 
 export const Success = ({ heroImages }) => {
-  // return <HeroImage src={heroImages[0].url} alt="Delicious Greek food" />; // Todo: desc
+  // return <HeroImage src={thumbnail(heroImages[0].url)} alt="Delicious Greek food" />; // Todo: desc
   return <HeroImage src={localHero} alt="Delicious Greek food" />;
 };

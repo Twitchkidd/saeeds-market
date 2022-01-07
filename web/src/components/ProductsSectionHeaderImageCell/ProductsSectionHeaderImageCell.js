@@ -11,6 +11,12 @@ const localImages = [
   Grape_Leaves2,
 ];
 
+const thumbnail = (url) => {
+  const parts = url.split('/');
+  parts.splice(3, 0, 'resize=width:640');
+  return parts.join('/');
+};
+
 const Image = styled.img`
   width: 100%;
 `;
@@ -35,7 +41,7 @@ export const Failure = ({ error }) => (
 export const Success = ({ productsSectionHeaderImages }) => (
   <>
     {/* {productsSectionHeaderImages.map((img, i) => (
-      <Image src={img.url} key={i} alt={img.description} />
+      <Image src={thumbnail(img.url)} key={i} alt={img.description} />
     ))} */}
     {localImages.map((img, i) => (
       <Image src={img} key={i} alt="{photos/img.description}" />
