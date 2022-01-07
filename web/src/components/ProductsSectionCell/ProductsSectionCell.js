@@ -20,5 +20,13 @@ export const Failure = ({ error }) => (
 );
 
 export const Success = ({ productTypes }) => {
-  return <div>{JSON.stringify(productTypes)}</div>;
+  return (
+    <>
+      {productTypes.map((product, i) => (
+        <div key={i}>
+          <h3>{product.name}</h3>
+        </div>
+      ))}
+    </>
+  );
 };

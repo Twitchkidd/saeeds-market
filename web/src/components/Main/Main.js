@@ -14,6 +14,7 @@ import WhatsNewTextCell from 'src/components/WhatsNewTextCell/WhatsNewTextCell';
 import WhatsNewCell from 'src/components/WhatsNewCell/WhatsNewCell';
 import WithFromTextCell from 'src/components/WithFromTextCell/WithFromTextCell';
 import InternationalSectionCell from 'src/components/InternationalSectionCell/InternationalSectionCell';
+import InternationalSectionHeaderCell from 'src/components/InternationalSectionHeaderCell/InternationalSectionHeaderCell';
 import ProductsSectionHeaderTextCell from 'src/components/ProductsSectionHeaderTextCell/ProductsSectionHeaderTextCell';
 import ProductsSectionHeaderImageCell from 'src/components/ProductsSectionHeaderImageCell/ProductsSectionHeaderImageCell';
 import ProductsSectionCell from 'src/components/ProductsSectionCell/ProductsSectionCell';

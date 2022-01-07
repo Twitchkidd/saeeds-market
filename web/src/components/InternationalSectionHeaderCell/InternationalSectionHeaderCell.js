@@ -61,7 +61,7 @@ export const Success = ({ countries, onUpdate }) => {
   return (
     <SectionHeader>
       <InternationalSectionHeaderTextCell />
-      <CountrySelector></CountrySelector>
+      {/* <CountrySelector></CountrySelector> */}
     </SectionHeader>
   );
 };
