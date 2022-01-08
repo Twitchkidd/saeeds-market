@@ -33,12 +33,12 @@ export const Success = ({ newItems }) => {
     <div key={i}>
       <h3>{item.title}</h3>
       <p>{item.description}</p>
-      <img
+      {/* <img
         src={thumbnail(item.imageUrl)}
         alt={item.title}
         style={{ width: '100%' }}
-      />
-      {/* <img src={localImages[i]} alt={item.title} style={{ width: '100%' }} /> */}
+      /> */}
+      <img src={localImages[i]} alt={item.title} style={{ width: '100%' }} />
     </div>
   ));
 };

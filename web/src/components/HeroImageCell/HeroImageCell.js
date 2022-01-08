@@ -32,8 +32,8 @@ export const Failure = ({ error }) => (
 );
 
 export const Success = ({ heroImages }) => {
-  return (
-    <HeroImage src={thumbnail(heroImages[0].url)} alt="Delicious Greek food" />
-  ); // Todo: desc
-  // return <HeroImage src={localHero} alt="Delicious Greek food" />;
+  // return (
+  //   <HeroImage src={thumbnail(heroImages[0].url)} alt="Delicious Greek food" />
+  // ); // Todo: desc
+  return <HeroImage src={localHero} alt="Delicious Greek food" />;
 };

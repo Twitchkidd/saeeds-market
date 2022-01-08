@@ -39,12 +39,12 @@ const SectionWrapper = styled.section`
 
 const Main = () => {
   const [taps, setTaps] = useState(0);
-  const [selected, setSelected] = useState('all');
+  const [selectedCountries, setSelectedCountries] = useState('all');
   const handleClick = () => {
     setTaps((prevTaps) => ++prevTaps);
   };
   const handleCountrySelect = (selection) => {
-    setSelected(selection);
+    setSelectedCountries(selection);
   };
   return (
     <MainWrapper>
@@ -77,7 +77,7 @@ const Main = () => {
       <SectionWrapper>
         <InternationalSectionHeaderCell onUpdate={handleCountrySelect} />
         <WithFromTextCell />
-        <InternationalSectionCell selected={selected} />
+        <InternationalSectionCell selected={selectedCountries} />
       </SectionWrapper>
       <SectionWrapper>
         <SectionHeader>

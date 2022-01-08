@@ -40,11 +40,11 @@ export const Failure = ({ error }) => (
 
 export const Success = ({ productsSectionHeaderImages }) => (
   <>
-    {productsSectionHeaderImages.map((img, i) => (
+    {/* {productsSectionHeaderImages.map((img, i) => (
       <Image src={thumbnail(img.url)} key={i} alt={img.description} />
-    ))}
-    {/* {localImages.map((img, i) => (
-      <Image src={img} key={i} alt="{photos/img.description}" />
     ))} */}
+    {localImages.map((img, i) => (
+      <Image src={img} key={i} alt="{photos/img.description}" />
+    ))}
   </>
 );

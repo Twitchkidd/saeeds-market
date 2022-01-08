@@ -54,8 +54,8 @@ export const Failure = ({ error }) => (
 );
 
 export const Success = ({ countries, selected }) => {
-  console.log(selected);
-  // so here we're going to want selected.map
+  const mockSelected = [gr, lb, it, de, tr, us, ru, fr, al];
+  // countries: [ { name: String, abbr: String, products: Product[] }, {} ... ]
   return (
     <>
       {countries.map((c, i) => (

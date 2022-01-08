@@ -2,6 +2,8 @@
 
 ## Dev
 
+! Remember to switch the image sources over to local unless you're specifically testing that! !
+
 <!-- Todo: difference between njjkgeerts self-hosting and the official docs, `yarn add workspace api @redwoodjs/api-server` -->
 <!-- Todo: do I need to `sudo -u postgres psql` and create the db 'saeeds'? -->
 
