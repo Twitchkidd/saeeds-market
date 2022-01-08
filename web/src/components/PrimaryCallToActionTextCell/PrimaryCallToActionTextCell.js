@@ -6,7 +6,7 @@ export const QUERY = gql`
   }
 `;
 
-export const Loading = () => 'Call In — (860) 440-2238';
+export const Loading = () => 'Call In: 860.440.2238';
 
 export const Empty = () => <div>Empty</div>;
 

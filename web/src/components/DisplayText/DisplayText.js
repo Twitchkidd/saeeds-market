@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { fontSize4 } from 'src/utils/typography';
+import { fontSize3 } from 'src/utils/typography';
 
 const DisplayText = styled.p`
-  font-size: ${fontSize4};
+  font-size: ${fontSize3};
 `;
 
 export default DisplayText;

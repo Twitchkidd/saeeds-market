@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import { fontSize4 } from 'src/utils/typography';
-import { verticalKeyline2 } from 'src/utils/spacing';
+import { fontSize5 } from 'src/utils/typography';
+import { verticalKeyline3 } from 'src/utils/spacing';
 
 const TagLine = styled.h2`
-  max-width: ${verticalKeyline2};
+  max-width: ${verticalKeyline3};
   text-align: center;
-  font-size: ${fontSize4};
+  font-size: ${fontSize5};
 `;
 
 export const QUERY = gql`
