@@ -38,7 +38,7 @@ const NavText = styled.span`
 
 const MenuList = styled.ul`
   width: 100%;
-  list-style-type: armenian;
+  list-style-type: none;
 `;
 
 const MenuAnchor = styled.a`

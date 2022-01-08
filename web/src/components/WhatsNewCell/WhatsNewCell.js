@@ -1,8 +1,8 @@
-// import Pepper_Pie from '../../../../../assets-saeeds/photos/Pepper_Pie.jpg';
-// import Spanikopita from '../../../../../assets-saeeds/photos/Spanikopita.jpg';
-// import Greek_Salad from '../../../../../assets-saeeds/photos/Greek_Salad.jpg';
+import Pepper_Pie from '../../../../../assets-saeeds/photos/Pepper_Pie.jpg';
+import Spanikopita from '../../../../../assets-saeeds/photos/Spanikopita.jpg';
+import Greek_Salad from '../../../../../assets-saeeds/photos/Greek_Salad.jpg';
 
-// const localImages = [Pepper_Pie, Spanikopita, Greek_Salad];
+const localImages = [Pepper_Pie, Spanikopita, Greek_Salad];
 
 const thumbnail = (url) => {
   const parts = url.split('/');

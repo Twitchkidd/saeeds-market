@@ -54,7 +54,7 @@ export const Failure = ({ error }) => (
 );
 
 export const Success = ({ countries, selected }) => {
-  const mockSelected = [gr, lb, it, de, tr, us, ru, fr, al];
+  // const mockSelected = [gr, lb, it, de, tr, us, ru, fr, al];
   // countries: [ { name: String, abbr: String, products: Product[] }, {} ... ]
   return (
     <>
@@ -62,9 +62,9 @@ export const Success = ({ countries, selected }) => {
         <section key={i}>
           <Flag abbr={c.abbr} />
           <h4>{c.name}</h4>
-          {c.products.map((p, j) => (
+          {/* {c.products.map((p, j) => (
             <p key={j}>{p.name}</p>
-          ))}
+          ))} */}
         </section>
       ))}
     </>

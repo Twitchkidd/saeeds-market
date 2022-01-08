@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-// import localHero from '../../../../../assets-saeeds/photos/Hero.jpg';
+import localHero from '../../../../../assets-saeeds/photos/Hero.jpg';
 
 const thumbnail = (url) => {
   const parts = url.split('/');
