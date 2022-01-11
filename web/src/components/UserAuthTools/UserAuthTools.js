@@ -2,12 +2,16 @@ import { useAuth } from '@redwoodjs/auth';
 import Button from 'src/components/Button/Button';
 
 const UserAuthTools = () => {
-  const { loading, isAuthenticated, logIn, logOut } = useAuth();
+  const { loading, isAuthenticated, logIn, logOut, currentUser, userMetadata } =
+    useAuth();
 
   if (loading) {
     // auth is rehydrating
     return null;
   }
+
+  console.log(currentUser);
+  console.log(userMetadata);
 
   return (
     <div
