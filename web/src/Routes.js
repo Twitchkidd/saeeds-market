@@ -33,12 +33,14 @@ const Routes = () => {
         <Route path="/about" page={AboutPage} name="about" />
         <Route path="/contact" page={ContactPage} name="contact" />
         <Route path="/faq" page={FaqPage} name="faq" />
-        <Private unauthenticated="landing" role={['admin']}>
+        {/* <Private unauthenticated="landing" role={['admin']}> */}
+        <Private unauthenticated="landing">
           <Route path="/admin" page={AdminPage} name="admin" />
         </Private>
       </Set>
       <Set wrap={TagLineTextsLayout}>
-        <Private unauthenticated="landing" role={['admin']}>
+        {/* <Private unauthenticated="landing" role={['admin']}> */}
+        <Private unauthenticated="landing">
           <Route path="/admin/tag-line-text/new" page={TagLineTextNewTagLineTextPage} name="newTagLineText" />
           <Route path="/admin/tag-line-text/{id:Int}/edit" page={TagLineTextEditTagLineTextPage} name="editTagLineText" />
           <Route path="/admin/tag-line-text/{id:Int}" page={TagLineTextTagLineTextPage} name="tagLineText" />
@@ -46,7 +48,8 @@ const Routes = () => {
         </Private>
       </Set>
       <Set wrap={PrimaryCallToActionTextsLayout}>
-        <Private unauthenticated="landing" role={['admin']}>
+        {/* <Private unauthenticated="landing" role={['admin']}> */}
+        <Private unauthenticated="landing">
           <Route path="/admin/primary-call-to-action-text/new" page={PrimaryCallToActionTextNewPrimaryCallToActionTextPage} name="newPrimaryCallToActionText" />
           <Route path="/admin/primary-call-to-action-text/{id:Int}/edit" page={PrimaryCallToActionTextEditPrimaryCallToActionTextPage} name="editPrimaryCallToActionText" />
           <Route path="/admin/primary-call-to-action-text/{id:Int}" page={PrimaryCallToActionTextPrimaryCallToActionTextPage} name="primaryCallToActionText" />
@@ -54,7 +57,8 @@ const Routes = () => {
         </Private>
       </Set>
       <Set wrap={DeliveryTextsLayout}>
-        <Private unauthenticated="landing" role={['admin']}>
+        {/* <Private unauthenticated="landing" role={['admin']}> */}
+        <Private unauthenticated="landing">
           <Route path="/admin/delivery-text/new" page={DeliveryTextNewDeliveryTextPage} name="newDeliveryText" />
           <Route path="/admin/delivery-text/{id:Int}/edit" page={DeliveryTextEditDeliveryTextPage} name="editDeliveryText" />
           <Route path="/admin/delivery-text/{id:Int}" page={DeliveryTextDeliveryTextPage} name="deliveryText" />
@@ -62,7 +66,8 @@ const Routes = () => {
         </Private>
       </Set>
       <Set wrap={HeroImagesLayout}>
-        <Private unauthenticated="landing" role={['admin']}>
+        {/* <Private unauthenticated="landing" role={['admin']}> */}
+        <Private unauthenticated="landing">
           <Route path="/admin/hero-image/new" page={HeroImageNewHeroImagePage} name="newHeroImage" />
           <Route path="/admin/hero-image/{id:Int}/edit" page={HeroImageEditHeroImagePage} name="editHeroImage" />
           <Route path="/admin/hero-image/{id:Int}" page={HeroImageHeroImagePage} name="heroImage" />
@@ -70,7 +75,8 @@ const Routes = () => {
         </Private>
       </Set>
       <Set wrap={WhatsNewTextsLayout}>
-        <Private unauthenticated="landing" role={['admin']}>
+        {/* <Private unauthenticated="landing" role={['admin']}> */}
+        <Private unauthenticated="landing">
           <Route path="/admin/whats-new-text/new" page={WhatsNewTextNewWhatsNewTextPage} name="newWhatsNewText" />
           <Route path="/admin/whats-new-text/{id:Int}/edit" page={WhatsNewTextEditWhatsNewTextPage} name="editWhatsNewText" />
           <Route path="/admin/whats-new-text/{id:Int}" page={WhatsNewTextWhatsNewTextPage} name="whatsNewText" />
@@ -78,7 +84,8 @@ const Routes = () => {
         </Private>
       </Set>
       <Set wrap={NewItemsLayout}>
-        <Private unauthenticated="landing" role={['admin']}>
+        {/* <Private unauthenticated="landing" role={['admin']}> */}
+        <Private unauthenticated="landing">
           <Route path="/admin/new-items/new" page={NewItemNewNewItemPage} name="newNewItem" />
           <Route path="/admin/new-items/{id:Int}/edit" page={NewItemEditNewItemPage} name="editNewItem" />
           <Route path="/admin/new-items/{id:Int}" page={NewItemNewItemPage} name="newItem" />
@@ -86,7 +93,8 @@ const Routes = () => {
         </Private>
       </Set>
       <Set wrap={CountriesLayout}>
-        <Private unauthenticated="landing" role={['admin']}>
+        {/* <Private unauthenticated="landing" role={['admin']}> */}
+        <Private unauthenticated="landing">
           <Route path="/admin/countries/new" page={CountryNewCountryPage} name="newCountry" />
           <Route path="/admin/countries/{id:Int}/edit" page={CountryEditCountryPage} name="editCountry" />
           <Route path="/admin/countries/{id:Int}" page={CountryCountryPage} name="country" />
@@ -94,7 +102,8 @@ const Routes = () => {
         </Private>
       </Set>
       <Set wrap={ProductTypesLayout}>
-        <Private unauthenticated="landing" role={['admin']}>
+        {/* <Private unauthenticated="landing" role={['admin']}> */}
+        <Private unauthenticated="landing">
           <Route path="/admin/product-types/new" page={ProductTypeNewProductTypePage} name="newProductType" />
           <Route path="/admin/product-types/{id:Int}/edit" page={ProductTypeEditProductTypePage} name="editProductType" />
           <Route path="/admin/product-types/{id:Int}" page={ProductTypeProductTypePage} name="productType" />
@@ -102,7 +111,8 @@ const Routes = () => {
         </Private>
       </Set>
       <Set wrap={ProductsLayout}>
-        <Private unauthenticated="landing" role={['admin']}>
+        {/* <Private unauthenticated="landing" role={['admin']}> */}
+        <Private unauthenticated="landing">
           <Route path="/admin/products/new" page={ProductNewProductPage} name="newProduct" />
           <Route path="/admin/products/{id:Int}/edit" page={ProductEditProductPage} name="editProduct" />
           <Route path="/admin/products/{id:Int}" page={ProductProductPage} name="product" />
@@ -110,7 +120,8 @@ const Routes = () => {
         </Private>
       </Set>
       <Set wrap={InternationalSectionHeaderTextsLayout}>
-        <Private unauthenticated="landing" role={['admin']}>
+        {/* <Private unauthenticated="landing" role={['admin']}> */}
+        <Private unauthenticated="landing">
           <Route path="/admin/international-section-header-text/new" page={InternationalSectionHeaderTextNewInternationalSectionHeaderTextPage} name="newInternationalSectionHeaderText" />
           <Route path="/admin/international-section-header-text/{id:Int}/edit" page={InternationalSectionHeaderTextEditInternationalSectionHeaderTextPage} name="editInternationalSectionHeaderText" />
           <Route path="/admin/international-section-header-text/{id:Int}" page={InternationalSectionHeaderTextInternationalSectionHeaderTextPage} name="internationalSectionHeaderText" />
@@ -118,7 +129,8 @@ const Routes = () => {
         </Private>
       </Set>
       <Set wrap={WithFromTextsLayout}>
-        <Private unauthenticated="landing" role={['admin']}>
+        {/* <Private unauthenticated="landing" role={['admin']}> */}
+        <Private unauthenticated="landing">
           <Route path="/admin/with-from-text/new" page={WithFromTextNewWithFromTextPage} name="newWithFromText" />
           <Route path="/admin/with-from-text/{id:Int}/edit" page={WithFromTextEditWithFromTextPage} name="editWithFromText" />
           <Route path="/admin/with-from-text/{id:Int}" page={WithFromTextWithFromTextPage} name="withFromText" />
@@ -126,7 +138,8 @@ const Routes = () => {
         </Private>
       </Set>
       <Set wrap={ProductsSectionHeaderTextsLayout}>
-        <Private unauthenticated="landing" role={['admin']}>
+        {/* <Private unauthenticated="landing" role={['admin']}> */}
+        <Private unauthenticated="landing">
           <Route path="/admin/products-section-header-text/new" page={ProductsSectionHeaderTextNewProductsSectionHeaderTextPage} name="newProductsSectionHeaderText" />
           <Route path="/admin/products-section-header-text/{id:Int}/edit" page={ProductsSectionHeaderTextEditProductsSectionHeaderTextPage} name="editProductsSectionHeaderText" />
           <Route path="/admin/products-section-header-text/{id:Int}" page={ProductsSectionHeaderTextProductsSectionHeaderTextPage} name="productsSectionHeaderText" />
@@ -134,7 +147,8 @@ const Routes = () => {
         </Private>
       </Set>
       <Set wrap={ProductsSectionHeaderImagesLayout}>
-        <Private unauthenticated="landing" role={['admin']}>
+        {/* <Private unauthenticated="landing" role={['admin']}> */}
+        <Private unauthenticated="landing">
           <Route path="/admin/products-section-header-images/new" page={ProductsSectionHeaderImageNewProductsSectionHeaderImagePage} name="newProductsSectionHeaderImage" />
           <Route path="/admin/products-section-header-images/{id:Int}/edit" page={ProductsSectionHeaderImageEditProductsSectionHeaderImagePage} name="editProductsSectionHeaderImage" />
           <Route path="/admin/products-section-header-images/{id:Int}" page={ProductsSectionHeaderImageProductsSectionHeaderImagePage} name="productsSectionHeaderImage" />
@@ -142,7 +156,8 @@ const Routes = () => {
         </Private>
       </Set>
       <Set wrap={WeCarryTextsLayout}>
-        <Private unauthenticated="landing" role={['admin']}>
+        {/* <Private unauthenticated="landing" role={['admin']}> */}
+        <Private unauthenticated="landing">
           <Route path="/admin/we-carry-text/new" page={WeCarryTextNewWeCarryTextPage} name="newWeCarryText" />
           <Route path="/admin/we-carry-text/{id:Int}/edit" page={WeCarryTextEditWeCarryTextPage} name="editWeCarryText" />
           <Route path="/admin/we-carry-text/{id:Int}" page={WeCarryTextWeCarryTextPage} name="weCarryText" />
@@ -150,7 +165,8 @@ const Routes = () => {
         </Private>
       </Set>
       <Set wrap={BusinessInfosLayout}>
-        <Private unauthenticated="landing" role={['admin']}>
+        {/* <Private unauthenticated="landing" role={['admin']}> */}
+        <Private unauthenticated="landing">
           <Route path="/admin/business-info/new" page={BusinessInfoNewBusinessInfoPage} name="newBusinessInfo" />
           <Route path="/admin/business-info/{id:Int}/edit" page={BusinessInfoEditBusinessInfoPage} name="editBusinessInfo" />
           <Route path="/admin/business-info/{id:Int}" page={BusinessInfoBusinessInfoPage} name="businessInfo" />
