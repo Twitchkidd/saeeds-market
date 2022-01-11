@@ -44,7 +44,7 @@ const Main = () => {
     setTaps((prevTaps) => ++prevTaps);
   };
   const handleCountrySelect = (selection) => {
-    setSelectedCountries(selection);
+    setSelectedCountries((prev) => selection);
   };
   return (
     <MainWrapper>
