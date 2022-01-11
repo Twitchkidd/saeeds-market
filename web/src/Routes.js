@@ -28,7 +28,7 @@ import BusinessInfosLayout from 'src/layouts/BusinessInfosLayout';
 const Routes = () => {
   return (
     <Router>
-      <Private unauthenticated="landing">
+      <Private unauthenticated="landing" role="admin">
         <Set wrap={MainLayout}>
           <Route path="/admin" page={AdminPage} name="admin" />
         </Set>

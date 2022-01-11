@@ -9,6 +9,7 @@ import US from 'src/assets/svg/us.svg';
 import RU from 'src/assets/svg/ru.svg';
 import FR from 'src/assets/svg/fr.svg';
 import AL from 'src/assets/svg/al.svg';
+import styled from 'styled-components';
 
 const Flag = ({ abbr }) => {
   switch (abbr) {
@@ -52,6 +53,18 @@ export const Failure = ({ error }) => (
   <div style={{ color: 'red' }}>Error: {error.message}</div>
 );
 
+// const CountryButton = styled.button``;
+
+// const CountrySelect = ({ countries, selected }) => {
+//   return (
+//     <>
+//       {countries.map((country, i) => (
+//         <button></button>
+//       ))}
+//     </>
+//   );
+// };
+
 export const Success = ({ countries, onUpdate }) => {
   const setNextSelected = (input) => {
     // if input was all, return all
@@ -61,7 +74,7 @@ export const Success = ({ countries, onUpdate }) => {
   return (
     <SectionHeader>
       <InternationalSectionHeaderTextCell />
-      {/* <CountrySelector></CountrySelector> */}
+      {/* <CountrySelect></CountrySelect> */}
     </SectionHeader>
   );
 };
