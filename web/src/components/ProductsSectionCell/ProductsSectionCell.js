@@ -22,9 +22,13 @@ export const Failure = ({ error }) => (
 export const Success = ({ productTypes }) => {
   return (
     <>
-      {productTypes.map((product, i) => (
+      {productTypes.map((productType, i) => (
         <div key={i}>
-          <h3>{product.name}</h3>
+          <h3>{productType.name}</h3>
+          {productType.products &&
+            productType.products.map((product, j) => (
+              <p key={j}>{product.name}</p>
+            ))}
         </div>
       ))}
     </>
