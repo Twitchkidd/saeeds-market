@@ -4,18 +4,18 @@ import {
   FieldError,
   Label,
   TextField,
-  NumberField,
+  SelectField,
   Submit,
 } from '@redwoodjs/forms';
 
-const formatDatetime = value => {
+const formatDatetime = (value) => {
   if (value) {
     return value.replace(/:\d{2}\.\d{3}\w/, '');
   }
 };
 
-const ProductForm = props => {
-  const onSubmit = data => {
+const ProductForm = (props) => {
+  const onSubmit = (data) => {
     props.onSave(data, props?.product?.id);
   };
 
@@ -51,15 +51,27 @@ const ProductForm = props => {
           className="rw-label"
           errorClassName="rw-label rw-label-error"
         >
-          Country id
+          Country
         </Label>
-        <NumberField
+        <SelectField
           name="countryId"
-          defaultValue={props.product?.countryId}
           className="rw-input"
           errorClassName="rw-input rw-input-error"
-          validation={{ required: true }}
-        />
+          validation={{ valueAsNumber: true }}
+        >
+          <option value="" disabled selected>
+            Select Country
+          </option>
+          <option value={1}>Greece</option>
+          <option value={2}>Lebanon</option>
+          <option value={3}>Italy</option>
+          <option value={4}>Germany</option>
+          <option value={5}>Turkey</option>
+          <option value={6}>USA</option>
+          <option value={7}>Russia</option>
+          <option value={8}>France</option>
+          <option value={9}>Albania</option>
+        </SelectField>
 
         <FieldError name="countryId" className="rw-field-error" />
 
@@ -70,13 +82,24 @@ const ProductForm = props => {
         >
           Type id
         </Label>
-        <NumberField
+        <SelectField
           name="typeId"
-          defaultValue={props.product?.typeId}
           className="rw-input"
           errorClassName="rw-input rw-input-error"
-          validation={{ required: true }}
-        />
+          validation={{ valueAsNumber: true }}
+        >
+          <option value="" disabled selected>
+            Select Product Type
+          </option>
+          <option value={1}>Baklava</option>
+          <option value={2}>Gyros</option>
+          <option value={3}>Salads</option>
+          <option value={4}>Pies</option>
+          <option value={5}>Cookies</option>
+          <option value={6}>Beer</option>
+          <option value={7}>Olive Oils</option>
+          <option value={8}>Gelato</option>
+        </SelectField>
 
         <FieldError name="typeId" className="rw-field-error" />
 

@@ -99,9 +99,9 @@ model Product {
   id        Int          @id @default(autoincrement())
   name      String
   country   Country?     @relation(fields: [countryId], references: [id])
-  countryId Int
+  countryId Int?
   type      ProductType? @relation(fields: [typeId], references: [id])
-  typeId    Int
+  typeId    Int?
   createdAt DateTime     @default(now())
 }
 

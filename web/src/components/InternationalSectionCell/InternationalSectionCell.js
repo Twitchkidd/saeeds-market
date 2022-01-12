@@ -58,13 +58,12 @@ export const Success = ({ countries, selected }) => {
   // countries: [ { name: String, abbr: String, products: Product[] }, {} ... ]
   return (
     <>
-      {countries.map((c, i) => (
+      {countries.map((country, i) => (
         <section key={i}>
-          <Flag abbr={c.abbr} />
-          <h4>{c.name}</h4>
-          {/* {c.products.map((p, j) => (
-            <p key={j}>{p.name}</p>
-          ))} */}
+          <Flag abbr={country.abbr} />
+          <h4>{country.name}</h4>
+          {country.products &&
+            country.products.map((product, j) => <p key={j}>{product.name}</p>)}
         </section>
       ))}
     </>

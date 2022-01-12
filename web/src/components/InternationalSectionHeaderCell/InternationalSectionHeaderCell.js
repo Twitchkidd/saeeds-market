@@ -1,40 +1,13 @@
+import styled from 'styled-components';
 import SectionHeader from 'src/components/SectionHeader/SectionHeader';
 import InternationalSectionHeaderTextCell from 'src/components/InternationalSectionHeaderTextCell/InternationalSectionHeaderTextCell';
-import GR from 'src/assets/svg/gr.svg';
-import LB from 'src/assets/svg/lb.svg';
-import IT from 'src/assets/svg/it.svg';
-import DE from 'src/assets/svg/de.svg';
-import TR from 'src/assets/svg/tr.svg';
-import US from 'src/assets/svg/us.svg';
-import RU from 'src/assets/svg/ru.svg';
-import FR from 'src/assets/svg/fr.svg';
-import AL from 'src/assets/svg/al.svg';
-import styled from 'styled-components';
+import Flag from 'src/components/Flag';
 
-const Flag = ({ abbr }) => {
-  switch (abbr) {
-    case 'gr':
-      return <GR />;
-    case 'lb':
-      return <LB />;
-    case 'it':
-      return <IT />;
-    case 'de':
-      return <DE />;
-    case 'tr':
-      return <TR />;
-    case 'us':
-      return <US />;
-    case 'ru':
-      return <RU />;
-    case 'fr':
-      return <FR />;
-    case 'al':
-      return <AL />;
-    default:
-      return null;
-  }
-};
+const Button = styled.button`
+  max-width: 80px;
+`;
+
+const Wrapper = styled.header``;
 
 export const QUERY = gql`
   query FindCountriesQuery {
@@ -53,18 +26,6 @@ export const Failure = ({ error }) => (
   <div style={{ color: 'red' }}>Error: {error.message}</div>
 );
 
-// const CountryButton = styled.button``;
-
-// const CountrySelect = ({ countries, selected }) => {
-//   return (
-//     <>
-//       {countries.map((country, i) => (
-//         <button></button>
-//       ))}
-//     </>
-//   );
-// };
-
 export const Success = ({ countries, onUpdate }) => {
   const setNextSelected = (input) => {
     // if input was all, return all
@@ -72,9 +33,15 @@ export const Success = ({ countries, onUpdate }) => {
     // if input was not already selected, return selected plus input
   };
   return (
-    <SectionHeader>
-      <InternationalSectionHeaderTextCell />
-      {/* <CountrySelect></CountrySelect> */}
-    </SectionHeader>
+    <Wrapper>
+      <SectionHeader>
+        <InternationalSectionHeaderTextCell />
+      </SectionHeader>
+      {countries.map((country, i) => (
+        <Button key={i}>
+          <Flag abbr={country.abbr} />
+        </Button>
+      ))}
+    </Wrapper>
   );
 };

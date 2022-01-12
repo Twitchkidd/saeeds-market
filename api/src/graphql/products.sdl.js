@@ -3,9 +3,9 @@ export const schema = gql`
     id: Int!
     name: String!
     country: Country
-    countryId: Int!
+    countryId: Int
     type: ProductType
-    typeId: Int!
+    typeId: Int
     createdAt: DateTime!
   }
 
@@ -16,8 +16,8 @@ export const schema = gql`
 
   input CreateProductInput {
     name: String!
-    countryId: Int!
-    typeId: Int!
+    countryId: Int
+    typeId: Int
   }
 
   input UpdateProductInput {

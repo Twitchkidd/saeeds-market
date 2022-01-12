@@ -38,8 +38,9 @@ const SectionWrapper = styled.section`
 `;
 
 const Main = () => {
+  const countries = ['gr', 'lb', 'it', 'de', 'tr', 'us', 'ru', 'fr', 'al'];
   const [taps, setTaps] = useState(0);
-  const [selectedCountries, setSelectedCountries] = useState('all');
+  const [selectedCountries, setSelectedCountries] = useState([...countries]);
   const handleClick = () => {
     setTaps((prevTaps) => ++prevTaps);
   };
