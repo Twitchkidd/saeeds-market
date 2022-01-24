@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import Logo from 'src/assets/svg/logo.svg';
-import UserAuthTools from 'src/components/UserAuthTools/UserAuthTools';
 import TagLineTextCell from 'src/components/TagLineTextCell/TagLineTextCell';
 import Button from 'src/components/Button/Button';
 import PrimaryCallToActionTextCell from 'src/components/PrimaryCallToActionTextCell/PrimaryCallToActionTextCell';
@@ -18,7 +16,8 @@ import InternationalSectionHeaderCell from 'src/components/InternationalSectionH
 import ProductsSectionHeaderTextCell from 'src/components/ProductsSectionHeaderTextCell/ProductsSectionHeaderTextCell';
 import ProductsSectionHeaderImageCell from 'src/components/ProductsSectionHeaderImageCell/ProductsSectionHeaderImageCell';
 import ProductsSectionCell from 'src/components/ProductsSectionCell/ProductsSectionCell';
-import { verticalKeyline2, verticalSpace1 } from 'src/utils/spacing';
+import { verticalSpace1 } from 'src/utils/spacing';
+import LogoDoorknock from '../LogoDoorknock/LogoDoorknock';
 
 const MainWrapper = styled.main`
   display: grid;
@@ -39,27 +38,13 @@ const SectionWrapper = styled.section`
 
 const Main = () => {
   const countries = ['gr', 'lb', 'it', 'de', 'tr', 'us', 'ru', 'fr', 'al'];
-  const [taps, setTaps] = useState(0);
   const [selectedCountries, setSelectedCountries] = useState([...countries]);
-  const handleClick = () => {
-    setTaps((prevTaps) => ++prevTaps);
-  };
   const handleCountrySelect = (selection) => {
     setSelectedCountries((prev) => selection);
   };
   return (
     <MainWrapper>
-      {taps < 8 ? (
-        <Logo
-          onClick={handleClick}
-          style={{
-            width: verticalKeyline2,
-            height: verticalKeyline2,
-          }}
-        />
-      ) : (
-        <UserAuthTools />
-      )}
+      <LogoDoorknock />
       <TagLineTextCell />
       <Button big>
         <PrimaryCallToActionTextCell />

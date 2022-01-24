@@ -6,6 +6,7 @@ body {
   position: fixed;
   overflow: hidden;
   font-size: 16px;
+  background: #14141d;
 }
 
 #redwood-app {
