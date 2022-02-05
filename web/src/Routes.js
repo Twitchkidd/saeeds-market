@@ -28,8 +28,8 @@ import BusinessInfosLayout from 'src/layouts/BusinessInfosLayout';
 const Routes = () => {
   return (
     <Router>
-      <Route path="/under-construction" page={UnderConstructionPage} name="underConstruction" />
       <Set wrap={MainLayout}>
+        <Route path="/under-construction" page={UnderConstructionPage} name="underConstruction" />
         <Route path="/" page={LandingPage} name="landing" />
         <Route path="/about" page={AboutPage} name="about" />
         <Route path="/contact" page={ContactPage} name="contact" />

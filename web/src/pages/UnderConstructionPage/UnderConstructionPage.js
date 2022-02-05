@@ -1,11 +1,7 @@
 import { Link, routes } from '@redwoodjs/router';
 import { MetaTags } from '@redwoodjs/web';
-
-/*
- * Under construction page!
- * First, we'll want to see if we can just display the boat!
- * Here we go!
- */
+import boat from 'src/assets/images/boat.png';
+import words from 'src/assets/images/words.png';
 
 const UnderConstructionPage = () => {
   return (
@@ -16,7 +12,7 @@ const UnderConstructionPage = () => {
         /* you should un-comment description and add a unique description, 155 characters or less
       You can look at this documentation for best practices : https://developers.google.com/search/docs/advanced/appearance/good-titles-snippets */
       />
-
+      <img src={boat} width="419" height="419" style={{ marginLeft: '-3px' }} />
       <h1>UnderConstructionPage</h1>
       <p>
         Find me in{' '}
