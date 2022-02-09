@@ -10,6 +10,7 @@ const Wrapper = styled.div`
 
   min-height: 100vh;
   width: 100vw;
+  padding: 44px 0 34px 0;
   padding-left: 4.1vw; /* 17 / 414 = 0.04106280193236715 */
   padding-right: 4.1vw;
 

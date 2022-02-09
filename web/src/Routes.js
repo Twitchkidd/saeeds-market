@@ -9,6 +9,7 @@
 
 import { Router, Route, Set, Private } from '@redwoodjs/router';
 import MainLayout from 'src/layouts/MainLayout/MainLayout';
+import UnderConstructionLayout from 'src/layouts/UnderConstructionLayout/UnderConstructionLayout';
 import TagLineTextsLayout from 'src/layouts/TagLineTextsLayout';
 import PrimaryCallToActionTextsLayout from 'src/layouts/PrimaryCallToActionTextsLayout';
 import DeliveryTextsLayout from 'src/layouts/DeliveryTextsLayout';
@@ -28,8 +29,10 @@ import BusinessInfosLayout from 'src/layouts/BusinessInfosLayout';
 const Routes = () => {
   return (
     <Router>
-      <Set wrap={MainLayout}>
+      <Set wrap={UnderConstructionLayout}>
         <Route path="/under-construction" page={UnderConstructionPage} name="underConstruction" />
+      </Set>
+      <Set wrap={MainLayout}>
         <Route path="/" page={LandingPage} name="landing" />
         <Route path="/about" page={AboutPage} name="about" />
         <Route path="/contact" page={ContactPage} name="contact" />
